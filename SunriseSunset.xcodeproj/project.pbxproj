@@ -25,6 +25,7 @@
 		C18E952421FB6ABE0082A01A /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952321FB6ABE0082A01A /* GooglePlacesManager.swift */; };
 		C18E952621FB6E4D0082A01A /* GooglePlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */; };
 		C18E952B21FB85B70082A01A /* UI + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952A21FB85B70082A01A /* UI + extensions.swift */; };
+		C18E952D21FB92780082A01A /* TimeZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952C21FB92780082A01A /* TimeZoneModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C18E952321FB6ABE0082A01A /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
 		C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlaceInfo.swift; sourceTree = "<group>"; };
 		C18E952A21FB85B70082A01A /* UI + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI + extensions.swift"; sourceTree = "<group>"; };
+		C18E952C21FB92780082A01A /* TimeZoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */,
 				C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */,
+				C18E952C21FB92780082A01A /* TimeZoneModel.swift */,
 			);
 			path = JSONModels;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				C18E94EE21FB25BC0082A01A /* AppDelegate.swift in Sources */,
 				C18E952621FB6E4D0082A01A /* GooglePlaceInfo.swift in Sources */,
 				C18E950B21FB31330082A01A /* CurrentLocationViewController.swift in Sources */,
+				C18E952D21FB92780082A01A /* TimeZoneModel.swift in Sources */,
 				C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */,
 				C18E951E21FB67A90082A01A /* FindCityViewController.swift in Sources */,
 				C18E950621FB2DF90082A01A /* StoryboardInstantiable.swift in Sources */,

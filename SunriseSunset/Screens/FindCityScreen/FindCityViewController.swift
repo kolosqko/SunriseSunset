@@ -26,6 +26,11 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.findCityTextField.delegate = self
+        googlePlacecManager.getTimeZone(latitude: 10, longitude: 10, onSucces: { (result) in
+            print(result.timeZoneId)
+        }, onFailure: { (errorMessage) in
+            print(errorMessage)
+        })
     }
     
     

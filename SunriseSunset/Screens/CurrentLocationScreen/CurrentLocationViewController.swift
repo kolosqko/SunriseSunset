@@ -19,6 +19,11 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        sunriseSunsetStart()
+    }
+    
+    
+    private func sunriseSunsetStart() {
         setupLocationManager()
         sunriseSunsetManager?.getSunriseSunsetInfo(onSucces: { [weak self] (data) in
             print(data.results.sunrise)
@@ -27,11 +32,11 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
             }
             strongSelf.instantiateViewModel(data: data)
             strongSelf.setupViewController()
-        }, onFailure: { [weak self] (errorMessage) in
-            guard let strongSelf = self else {
-                return
-            }
-            strongSelf.showErrorAlert(errorMessage: errorMessage)
+            }, onFailure: { [weak self] (errorMessage) in
+                guard let strongSelf = self else {
+                    return
+                }
+                strongSelf.showErrorAlert(errorMessage: errorMessage)
         })
     }
     
@@ -48,8 +53,6 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
         let longitude = Float(currentLocation.coordinate.longitude)
         self.sunriseSunsetManager = SunriseSunsetManager(latitude: latitude, longitude: longitude)
     }
-    
-    // view related --------------------------------------------------
     
     private func instantiateViewModel(data: SunsetSunriseInfo) {
         guard let latitude = self.currentLocation?.coordinate.latitude,
