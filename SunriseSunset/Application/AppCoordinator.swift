@@ -13,14 +13,19 @@ import UIKit
 final class AppCoordinator: Coordinator {
     
     private let window: UIWindow
-    private let rootViewController: UIViewController
+    private let rootViewController: UINavigationController
+    var currentLocationCoordinator: CurrentLocationCoordinator?
     
     init(window: UIWindow) {
         self.window = window
-        self.rootViewController = UIViewController()
+        self.rootViewController = UINavigationController()
+        window.rootViewController = rootViewController
+        window.makeKeyAndVisible()
     }
     
     func start(){
         
+        self.currentLocationCoordinator = CurrentLocationCoordinator(presenter: self.rootViewController)
+        self.currentLocationCoordinator?.start()
     }
 }

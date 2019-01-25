@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CurrentLocationViewController.swift
 //  SunriseSunset
 //
 //  Created by Kolos on 1/25/19.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
-
 }
-
