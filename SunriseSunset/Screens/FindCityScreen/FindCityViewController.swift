@@ -19,13 +19,13 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
     
     var viewModel: FindCityViewModel? {
         didSet {
-            print(viewModel?.sunrise)
+            setupViewController()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        findCity(text: "new york")
+        self.findCityTextField.delegate = self
     }
     
     
@@ -57,4 +57,37 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
                                                     print(errorMessage)
         })
     }
+    
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var sunriseLabel: UILabel!
+    @IBOutlet weak var sunsetLabel: UILabel!
+    
+    @IBOutlet weak var findCityTextField: UITextField!
+    
+    private func setupViewController() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            self.latitudeLabel.text = String(viewModel.latitude)
+            self.longitudeLabel.text = String(viewModel.longitude)
+            self.sunriseLabel.text = String(viewModel.sunrise)
+            self.sunsetLabel.text = String(viewModel.sunset)
+        }
+    }
+}
+
+
+extension FindCityViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else {
+            return false
+        }
+        textField.text = ""
+        findCity(text: text)
+        return true
+    }
+    
 }
