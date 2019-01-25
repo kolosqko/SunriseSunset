@@ -13,6 +13,8 @@ class CurrentLocationCoordinator: Coordinator {
     
     private let presenter: UINavigationController
     private var currentLocationViewController: CurrentLocationViewController?
+    private var findCityCoordinator: FindCityCoordinator?
+
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -22,5 +24,14 @@ class CurrentLocationCoordinator: Coordinator {
         let currentLocationViewController: CurrentLocationViewController = CurrentLocationViewController.instantiateViewController()
         self.presenter.pushViewController(currentLocationViewController, animated: true)
         self.currentLocationViewController = currentLocationViewController
+        
+        let findCityButton = UIBarButtonItem(title: "Find city", style: .plain, target: self, action: #selector(findCityTapped))
+        currentLocationViewController.navigationItem.rightBarButtonItems = [findCityButton]
+    }
+    
+    @objc private func findCityTapped() {
+        let findCityCoordinator = FindCityCoordinator(presenter: presenter)
+        findCityCoordinator.start()
+        self.findCityCoordinator = findCityCoordinator
     }
 }

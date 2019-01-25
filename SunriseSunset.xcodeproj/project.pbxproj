@@ -18,6 +18,10 @@
 		C18E951121FB32600082A01A /* CurrentLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951021FB32600082A01A /* CurrentLocationCoordinator.swift */; };
 		C18E951421FB3D170082A01A /* SunriseSunsetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951321FB3D170082A01A /* SunriseSunsetManager.swift */; };
 		C18E951721FB40A50082A01A /* SunsetSunriseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */; };
+		C18E951B21FB5CDF0082A01A /* CurrentLocationVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951A21FB5CDF0082A01A /* CurrentLocationVCViewModel.swift */; };
+		C18E951E21FB67A90082A01A /* FindCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951D21FB67A90082A01A /* FindCityViewController.swift */; };
+		C18E952021FB67CE0082A01A /* FindCityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E951F21FB67CE0082A01A /* FindCityViewController.storyboard */; };
+		C18E952221FB67FA0082A01A /* FindCityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		C18E951021FB32600082A01A /* CurrentLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationCoordinator.swift; sourceTree = "<group>"; };
 		C18E951321FB3D170082A01A /* SunriseSunsetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseSunsetManager.swift; sourceTree = "<group>"; };
 		C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetSunriseInfo.swift; sourceTree = "<group>"; };
+		C18E951A21FB5CDF0082A01A /* CurrentLocationVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationVCViewModel.swift; sourceTree = "<group>"; };
+		C18E951D21FB67A90082A01A /* FindCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityViewController.swift; sourceTree = "<group>"; };
+		C18E951F21FB67CE0082A01A /* FindCityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindCityViewController.storyboard; sourceTree = "<group>"; };
+		C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,7 @@
 		C18E950021FB2D6C0082A01A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C18E951821FB5CB80082A01A /* CurrentLocationViewModels */,
 				C18E951521FB40780082A01A /* JSONModels */,
 			);
 			path = Models;
@@ -98,6 +107,7 @@
 		C18E950121FB2D710082A01A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C18E951C21FB67710082A01A /* FindCityScreen */,
 				C18E950921FB30F20082A01A /* CurrentLocationScreen */,
 			);
 			path = Screens;
@@ -136,6 +146,24 @@
 				C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */,
 			);
 			path = JSONModels;
+			sourceTree = "<group>";
+		};
+		C18E951821FB5CB80082A01A /* CurrentLocationViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C18E951A21FB5CDF0082A01A /* CurrentLocationVCViewModel.swift */,
+			);
+			path = CurrentLocationViewModels;
+			sourceTree = "<group>";
+		};
+		C18E951C21FB67710082A01A /* FindCityScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C18E951D21FB67A90082A01A /* FindCityViewController.swift */,
+				C18E951F21FB67CE0082A01A /* FindCityViewController.storyboard */,
+				C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */,
+			);
+			path = FindCityScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +227,7 @@
 				C18E94F821FB25BF0082A01A /* LaunchScreen.storyboard in Resources */,
 				C18E94F521FB25BF0082A01A /* Assets.xcassets in Resources */,
 				C18E950F21FB31A70082A01A /* CurrentLocationViewController.storyboard in Resources */,
+				C18E952021FB67CE0082A01A /* FindCityViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,11 +241,14 @@
 				C18E951421FB3D170082A01A /* SunriseSunsetManager.swift in Sources */,
 				C18E951721FB40A50082A01A /* SunsetSunriseInfo.swift in Sources */,
 				C18E951121FB32600082A01A /* CurrentLocationCoordinator.swift in Sources */,
+				C18E952221FB67FA0082A01A /* FindCityCoordinator.swift in Sources */,
 				C18E94EE21FB25BC0082A01A /* AppDelegate.swift in Sources */,
 				C18E950B21FB31330082A01A /* CurrentLocationViewController.swift in Sources */,
 				C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */,
+				C18E951E21FB67A90082A01A /* FindCityViewController.swift in Sources */,
 				C18E950621FB2DF90082A01A /* StoryboardInstantiable.swift in Sources */,
 				C18E950421FB2DD90082A01A /* Coordinator.swift in Sources */,
+				C18E951B21FB5CDF0082A01A /* CurrentLocationVCViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

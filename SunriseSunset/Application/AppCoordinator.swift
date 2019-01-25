@@ -14,7 +14,7 @@ final class AppCoordinator: Coordinator {
     
     private let window: UIWindow
     private let rootViewController: UINavigationController
-    var currentLocationCoordinator: CurrentLocationCoordinator?
+    private var currentLocationCoordinator: CurrentLocationCoordinator?
     
     init(window: UIWindow) {
         self.window = window
@@ -24,8 +24,13 @@ final class AppCoordinator: Coordinator {
     }
     
     func start(){
-        
         self.currentLocationCoordinator = CurrentLocationCoordinator(presenter: self.rootViewController)
         self.currentLocationCoordinator?.start()
+        
+       
+        
+
     }
+    
+    
 }
