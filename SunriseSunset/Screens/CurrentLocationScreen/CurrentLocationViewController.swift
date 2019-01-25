@@ -19,7 +19,8 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
         super.viewDidLoad()
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
-        self.currentLocation = requestCurrentLocation()
+        locationManager.requestLocation()
+        self.currentLocation = locationManager.location
         guard let currentLocation = currentLocation else {
             print("Cannot find current location")
             return
@@ -28,21 +29,37 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
         let longitude = Float(currentLocation.coordinate.longitude)
         self.sunriseSunsetManager = SunriseSunsetManager(latitude: latitude, longitude: longitude)
         
-        sunriseSunsetManager?.getSunriseSunsetInfo(onSucces: { (data) in
+        sunriseSunsetManager?.getSunriseSunsetInfo(onSucces: { [weak self] (data) in
             print(data.results.sunrise)
+            guard let strongSelf = self else {
+                return
+            }
+            DispatchQueue.main.async {
+                strongSelf.setupViewController()
+            }
         }, onFailure: { (errorMessage) in
             print(errorMessage)
         })
     }
     
+    // view realted --------------------------------------------------
     
-    private func requestCurrentLocation() -> CLLocation? {
-        
-        locationManager.requestLocation()
-        return locationManager.location
+    private func setupViewController() {
+        guard let latitude = currentLocation?.coordinate.latitude,
+            let longitude = locationManager.location?.coordinate.longitude else {
+                return
+        }
+        self.latitudeLabel.text = String(latitude)
+        self.longitudeLabel.text = String(longitude)
     }
-
+    
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    
 }
+
+
+
 
 extension CurrentLocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
