@@ -11,8 +11,8 @@ import Foundation
 
 class SunriseSunsetManager {
     
-    private var latitude: Float
-    private var longitude: Float
+    var latitude: Float
+    var longitude: Float
     
     private func getUrl() -> URL? {
         let url = URL(string: "https://api.sunrise-sunset.org/json?lat=\(String(format:"%f", latitude))&lng=\(String(format:"%f", longitude))&formatted=0")
