@@ -14,7 +14,8 @@ final class AppCoordinator: Coordinator {
     
     private let window: UIWindow
     private let rootViewController: UINavigationController
-    private var currentLocationCoordinator: CurrentLocationCoordinator?
+//    private var currentLocationCoordinator: CurrentLocationCoordinator?
+    private var listOfLocationsCoordinator: ListOfLocationsCoordinator?
     
     init(window: UIWindow) {
         self.window = window
@@ -25,9 +26,10 @@ final class AppCoordinator: Coordinator {
     }
     
     func start(){
-        self.currentLocationCoordinator = CurrentLocationCoordinator(presenter: self.rootViewController)
-        self.currentLocationCoordinator?.start()
-        
+//        self.currentLocationCoordinator = CurrentLocationCoordinator(presenter: self.rootViewController)
+//        self.currentLocationCoordinator?.start()
+        self.listOfLocationsCoordinator = ListOfLocationsCoordinator(presenter: self.rootViewController)
+        self.listOfLocationsCoordinator?.start()
 
     }
     
