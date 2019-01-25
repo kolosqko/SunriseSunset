@@ -12,6 +12,9 @@
 		C18E94F321FB25BC0082A01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E94F121FB25BC0082A01A /* Main.storyboard */; };
 		C18E94F521FB25BF0082A01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18E94F421FB25BF0082A01A /* Assets.xcassets */; };
 		C18E94F821FB25BF0082A01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E94F621FB25BF0082A01A /* LaunchScreen.storyboard */; };
+		C18E950421FB2DD90082A01A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E950321FB2DD90082A01A /* Coordinator.swift */; };
+		C18E950621FB2DF90082A01A /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E950521FB2DF90082A01A /* StoryboardInstantiable.swift */; };
+		C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E950721FB2F690082A01A /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		C18E94F421FB25BF0082A01A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C18E94F721FB25BF0082A01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C18E94F921FB25BF0082A01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C18E950321FB2DD90082A01A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C18E950521FB2DF90082A01A /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		C18E950721FB2F690082A01A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		C18E94EC21FB25BC0082A01A /* SunriseSunset */ = {
 			isa = PBXGroup;
 			children = (
-				C18E94ED21FB25BC0082A01A /* AppDelegate.swift */,
+				C18E950221FB2D9D0082A01A /* Coordinator related */,
+				C18E950121FB2D710082A01A /* Screens */,
+				C18E950021FB2D6C0082A01A /* Models */,
+				C18E94FF21FB2D5B0082A01A /* Application */,
 				C18E94EF21FB25BC0082A01A /* ViewController.swift */,
 				C18E94F121FB25BC0082A01A /* Main.storyboard */,
 				C18E94F421FB25BF0082A01A /* Assets.xcassets */,
 				C18E94F621FB25BF0082A01A /* LaunchScreen.storyboard */,
-				C18E94F921FB25BF0082A01A /* Info.plist */,
 			);
 			path = SunriseSunset;
+			sourceTree = "<group>";
+		};
+		C18E94FF21FB2D5B0082A01A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C18E94F921FB25BF0082A01A /* Info.plist */,
+				C18E94ED21FB25BC0082A01A /* AppDelegate.swift */,
+				C18E950721FB2F690082A01A /* AppCoordinator.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C18E950021FB2D6C0082A01A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C18E950121FB2D710082A01A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		C18E950221FB2D9D0082A01A /* Coordinator related */ = {
+			isa = PBXGroup;
+			children = (
+				C18E950321FB2DD90082A01A /* Coordinator.swift */,
+				C18E950521FB2DF90082A01A /* StoryboardInstantiable.swift */,
+			);
+			path = "Coordinator related";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +178,9 @@
 			files = (
 				C18E94F021FB25BC0082A01A /* ViewController.swift in Sources */,
 				C18E94EE21FB25BC0082A01A /* AppDelegate.swift in Sources */,
+				C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */,
+				C18E950621FB2DF90082A01A /* StoryboardInstantiable.swift in Sources */,
+				C18E950421FB2DD90082A01A /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SunriseSunset/Info.plist;
+				INFOPLIST_FILE = SunriseSunset/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +344,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SunriseSunset/Info.plist;
+				INFOPLIST_FILE = SunriseSunset/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
