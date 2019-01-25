@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="JSZ-Cw-Nng">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUT-Fq-fKn">
+                                <rect key="frame" x="15" y="35" width="205.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YUT-Fq-fKn" firstAttribute="top" secondItem="g94-BD-aM4" secondAttribute="top" constant="15" id="aAv-ex-8i7"/>
+                            <constraint firstItem="YUT-Fq-fKn" firstAttribute="leading" secondItem="g94-BD-aM4" secondAttribute="leading" constant="15" id="vp6-EW-DYD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="g94-BD-aM4"/>
                     </view>
                 </viewController>

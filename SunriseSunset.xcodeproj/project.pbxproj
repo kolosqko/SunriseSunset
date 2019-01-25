@@ -16,6 +16,8 @@
 		C18E950B21FB31330082A01A /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E950A21FB31330082A01A /* CurrentLocationViewController.swift */; };
 		C18E950F21FB31A70082A01A /* CurrentLocationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E950E21FB31A70082A01A /* CurrentLocationViewController.storyboard */; };
 		C18E951121FB32600082A01A /* CurrentLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951021FB32600082A01A /* CurrentLocationCoordinator.swift */; };
+		C18E951421FB3D170082A01A /* SunriseSunsetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951321FB3D170082A01A /* SunriseSunsetManager.swift */; };
+		C18E951721FB40A50082A01A /* SunsetSunriseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		C18E950A21FB31330082A01A /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		C18E950E21FB31A70082A01A /* CurrentLocationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentLocationViewController.storyboard; sourceTree = "<group>"; };
 		C18E951021FB32600082A01A /* CurrentLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationCoordinator.swift; sourceTree = "<group>"; };
+		C18E951321FB3D170082A01A /* SunriseSunsetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseSunsetManager.swift; sourceTree = "<group>"; };
+		C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetSunriseInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		C18E94EC21FB25BC0082A01A /* SunriseSunset */ = {
 			isa = PBXGroup;
 			children = (
+				C18E951221FB3CF50082A01A /* ApiManagers */,
 				C18E950221FB2D9D0082A01A /* Coordinator related */,
 				C18E950121FB2D710082A01A /* Screens */,
 				C18E950021FB2D6C0082A01A /* Models */,
@@ -85,6 +90,7 @@
 		C18E950021FB2D6C0082A01A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C18E951521FB40780082A01A /* JSONModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,6 +120,22 @@
 				C18E951021FB32600082A01A /* CurrentLocationCoordinator.swift */,
 			);
 			path = CurrentLocationScreen;
+			sourceTree = "<group>";
+		};
+		C18E951221FB3CF50082A01A /* ApiManagers */ = {
+			isa = PBXGroup;
+			children = (
+				C18E951321FB3D170082A01A /* SunriseSunsetManager.swift */,
+			);
+			path = ApiManagers;
+			sourceTree = "<group>";
+		};
+		C18E951521FB40780082A01A /* JSONModels */ = {
+			isa = PBXGroup;
+			children = (
+				C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */,
+			);
+			path = JSONModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18E951421FB3D170082A01A /* SunriseSunsetManager.swift in Sources */,
+				C18E951721FB40A50082A01A /* SunsetSunriseInfo.swift in Sources */,
 				C18E951121FB32600082A01A /* CurrentLocationCoordinator.swift in Sources */,
 				C18E94EE21FB25BC0082A01A /* AppDelegate.swift in Sources */,
 				C18E950B21FB31330082A01A /* CurrentLocationViewController.swift in Sources */,
