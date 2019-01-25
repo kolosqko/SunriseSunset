@@ -24,6 +24,7 @@
 		C18E952221FB67FA0082A01A /* FindCityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */; };
 		C18E952421FB6ABE0082A01A /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952321FB6ABE0082A01A /* GooglePlacesManager.swift */; };
 		C18E952621FB6E4D0082A01A /* GooglePlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */; };
+		C18E952B21FB85B70082A01A /* UI + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952A21FB85B70082A01A /* UI + extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityCoordinator.swift; sourceTree = "<group>"; };
 		C18E952321FB6ABE0082A01A /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
 		C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlaceInfo.swift; sourceTree = "<group>"; };
+		C18E952A21FB85B70082A01A /* UI + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI + extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				C18E950321FB2DD90082A01A /* Coordinator.swift */,
 				C18E950521FB2DF90082A01A /* StoryboardInstantiable.swift */,
+				C18E952A21FB85B70082A01A /* UI + extensions.swift */,
 			);
 			path = "Coordinator related";
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */,
 				C18E951E21FB67A90082A01A /* FindCityViewController.swift in Sources */,
 				C18E950621FB2DF90082A01A /* StoryboardInstantiable.swift in Sources */,
+				C18E952B21FB85B70082A01A /* UI + extensions.swift in Sources */,
 				C18E950421FB2DD90082A01A /* Coordinator.swift in Sources */,
 				C18E951B21FB5CDF0082A01A /* LocationInfoViewModel.swift in Sources */,
 			);

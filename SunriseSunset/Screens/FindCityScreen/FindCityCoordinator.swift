@@ -22,5 +22,6 @@ class FindCityCoordinator: Coordinator {
         let findCityViewController: FindCityViewController = FindCityViewController.instantiateViewController()
         presenter.pushViewController(findCityViewController, animated: true)
         self.findCityViewController = findCityViewController
+        presenter.navigationBar.tintColor = UIColor.white
     }
 }

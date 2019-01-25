@@ -36,7 +36,7 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
                                             return
                                         }
                                         if result.status != "OK" {
-                                            print(result.status)
+                                            strongSelf.showErrorAlert(errorMessage: result.status)
                                             return
                                         }
                                         let latitude = Float(result.results[0].geometry.location.lat)
@@ -57,9 +57,20 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
                                                      longitude: sunriseSunsetManager.longitude,
                                                      data: result)
             },
-                                                   onFailure: { (errorMessage) in
-                                                    print(errorMessage)
+                                                   onFailure: { [weak self] (errorMessage) in
+                                                    guard let strongSelf = self else {
+                                                        return
+                                                    }
+                                                    strongSelf.showErrorAlert(errorMessage: errorMessage)
         })
+    }
+    
+    private func showErrorAlert(errorMessage: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBOutlet weak var latitudeLabel: UILabel!
@@ -92,6 +103,10 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
             self.astronomicalTwilightBeginLabel.text = String(viewModel.astronomicalTwilightBegin)
             self.astronomicalTwilightEndLabel.text = String(viewModel.astronomicalTwilightEnd)
         }
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
 }
 

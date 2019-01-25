@@ -20,14 +20,13 @@ final class AppCoordinator: Coordinator {
         self.window = window
         self.rootViewController = UINavigationController()
         window.rootViewController = rootViewController
+        rootViewController.navigationBar.barTintColor = UIColor.gray
         window.makeKeyAndVisible()
     }
     
     func start(){
         self.currentLocationCoordinator = CurrentLocationCoordinator(presenter: self.rootViewController)
         self.currentLocationCoordinator?.start()
-        
-       
         
 
     }

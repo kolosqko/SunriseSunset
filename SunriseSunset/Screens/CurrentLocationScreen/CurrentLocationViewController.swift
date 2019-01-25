@@ -27,8 +27,11 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
             }
             strongSelf.instantiateViewModel(data: data)
             strongSelf.setupViewController()
-        }, onFailure: { (errorMessage) in
-            print(errorMessage)
+        }, onFailure: { [weak self] (errorMessage) in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.showErrorAlert(errorMessage: errorMessage)
         })
     }
     
@@ -38,7 +41,7 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
         locationManager.requestLocation()
         self.currentLocation = locationManager.location
         guard let currentLocation = currentLocation else {
-            print("Cannot find current location")
+            showErrorAlert(errorMessage: "Cannot find current location")
             return
         }
         let latitude = Float(currentLocation.coordinate.latitude)
@@ -78,6 +81,14 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
         }
     }
     
+    private func showErrorAlert(errorMessage: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     
@@ -89,6 +100,10 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var civilTwilightEndLabel: UILabel!
     @IBOutlet weak var astronomicalTwilightBeginLabel: UILabel!
     @IBOutlet weak var astronomicalTwilightEndLabel: UILabel!
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
     
 }
 

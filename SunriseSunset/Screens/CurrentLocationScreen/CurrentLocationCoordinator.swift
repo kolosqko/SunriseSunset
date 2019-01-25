@@ -26,6 +26,7 @@ class CurrentLocationCoordinator: Coordinator {
         self.currentLocationViewController = currentLocationViewController
         
         let findCityButton = UIBarButtonItem(title: "Find city", style: .plain, target: self, action: #selector(findCityTapped))
+        findCityButton.tintColor = UIColor.white
         currentLocationViewController.navigationItem.rightBarButtonItems = [findCityButton]
     }
     
