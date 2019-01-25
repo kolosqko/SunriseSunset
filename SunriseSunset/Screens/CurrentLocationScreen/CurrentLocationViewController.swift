@@ -7,19 +7,50 @@
 //
 
 import UIKit
+import CoreLocation
 
 class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
     
-    private let sunriseSunsetManager = SunriseSunsetManager(latitude: 1, longitude: 1)
+    private var sunriseSunsetManager: SunriseSunsetManager?
+    private let locationManager = CLLocationManager()
+    private var currentLocation: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        sunriseSunsetManager.getSunriseSunsetInfo(onSucces: { (data) in
-            print(data.results.dayLength)
-        },
-                                                  onFailure: { (errorMessage) in
-                                                    print(errorMessage)
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        self.currentLocation = requestCurrentLocation()
+        guard let currentLocation = currentLocation else {
+            print("Cannot find current location")
+            return
+        }
+        let latitude = Float(currentLocation.coordinate.latitude)
+        let longitude = Float(currentLocation.coordinate.longitude)
+        self.sunriseSunsetManager = SunriseSunsetManager(latitude: latitude, longitude: longitude)
+        
+        sunriseSunsetManager?.getSunriseSunsetInfo(onSucces: { (data) in
+            print(data.results.sunrise)
+        }, onFailure: { (errorMessage) in
+            print(errorMessage)
         })
+    }
+    
+    
+    private func requestCurrentLocation() -> CLLocation? {
+        
+        locationManager.requestLocation()
+        return locationManager.location
     }
 
 }
+
+extension CurrentLocationViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
+}
+

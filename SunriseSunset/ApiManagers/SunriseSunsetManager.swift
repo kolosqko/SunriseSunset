@@ -47,4 +47,9 @@ class SunriseSunsetManager {
         self.latitude = latitude
         self.longitude = longitude
     }
+    
+    init() {
+        self.latitude = 0
+        self.longitude = 0
+    }
 }
