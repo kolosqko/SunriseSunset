@@ -8,20 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		C18E94EE21FB25BC0082A01A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E94ED21FB25BC0082A01A /* AppDelegate.swift */; };
-		C18E94F021FB25BC0082A01A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E94EF21FB25BC0082A01A /* ViewController.swift */; };
-		C18E94F321FB25BC0082A01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E94F121FB25BC0082A01A /* Main.storyboard */; };
 		C18E94F521FB25BF0082A01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18E94F421FB25BF0082A01A /* Assets.xcassets */; };
 		C18E94F821FB25BF0082A01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E94F621FB25BF0082A01A /* LaunchScreen.storyboard */; };
+		C18E950421FB2DD90082A01A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E950321FB2DD90082A01A /* Coordinator.swift */; };
+		C18E950621FB2DF90082A01A /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E950521FB2DF90082A01A /* StoryboardInstantiable.swift */; };
+		C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E950721FB2F690082A01A /* AppCoordinator.swift */; };
+		C18E950B21FB31330082A01A /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E950A21FB31330082A01A /* CurrentLocationViewController.swift */; };
+		C18E950F21FB31A70082A01A /* CurrentLocationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E950E21FB31A70082A01A /* CurrentLocationViewController.storyboard */; };
+		C18E951121FB32600082A01A /* CurrentLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951021FB32600082A01A /* CurrentLocationCoordinator.swift */; };
+		C18E951421FB3D170082A01A /* SunriseSunsetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951321FB3D170082A01A /* SunriseSunsetManager.swift */; };
+		C18E951721FB40A50082A01A /* SunsetSunriseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */; };
+		C18E951B21FB5CDF0082A01A /* LocationInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951A21FB5CDF0082A01A /* LocationInfoViewModel.swift */; };
+		C18E951E21FB67A90082A01A /* FindCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951D21FB67A90082A01A /* FindCityViewController.swift */; };
+		C18E952021FB67CE0082A01A /* FindCityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E951F21FB67CE0082A01A /* FindCityViewController.storyboard */; };
+		C18E952221FB67FA0082A01A /* FindCityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */; };
+		C18E952421FB6ABE0082A01A /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952321FB6ABE0082A01A /* GooglePlacesManager.swift */; };
+		C18E952621FB6E4D0082A01A /* GooglePlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */; };
+		C18E952B21FB85B70082A01A /* UI + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952A21FB85B70082A01A /* UI + extensions.swift */; };
+		C18E952D21FB92780082A01A /* TimeZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952C21FB92780082A01A /* TimeZoneModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C18E94EA21FB25BC0082A01A /* SunriseSunset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunriseSunset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18E94ED21FB25BC0082A01A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C18E94EF21FB25BC0082A01A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C18E94F221FB25BC0082A01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C18E94F421FB25BF0082A01A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C18E94F721FB25BF0082A01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C18E94F921FB25BF0082A01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C18E950321FB2DD90082A01A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C18E950521FB2DF90082A01A /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		C18E950721FB2F690082A01A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C18E950A21FB31330082A01A /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
+		C18E950E21FB31A70082A01A /* CurrentLocationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentLocationViewController.storyboard; sourceTree = "<group>"; };
+		C18E951021FB32600082A01A /* CurrentLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationCoordinator.swift; sourceTree = "<group>"; };
+		C18E951321FB3D170082A01A /* SunriseSunsetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseSunsetManager.swift; sourceTree = "<group>"; };
+		C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetSunriseInfo.swift; sourceTree = "<group>"; };
+		C18E951A21FB5CDF0082A01A /* LocationInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewModel.swift; sourceTree = "<group>"; };
+		C18E951D21FB67A90082A01A /* FindCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityViewController.swift; sourceTree = "<group>"; };
+		C18E951F21FB67CE0082A01A /* FindCityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindCityViewController.storyboard; sourceTree = "<group>"; };
+		C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityCoordinator.swift; sourceTree = "<group>"; };
+		C18E952321FB6ABE0082A01A /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
+		C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlaceInfo.swift; sourceTree = "<group>"; };
+		C18E952A21FB85B70082A01A /* UI + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI + extensions.swift"; sourceTree = "<group>"; };
+		C18E952C21FB92780082A01A /* TimeZoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +82,100 @@
 		C18E94EC21FB25BC0082A01A /* SunriseSunset */ = {
 			isa = PBXGroup;
 			children = (
-				C18E94ED21FB25BC0082A01A /* AppDelegate.swift */,
-				C18E94EF21FB25BC0082A01A /* ViewController.swift */,
-				C18E94F121FB25BC0082A01A /* Main.storyboard */,
+				C18E951221FB3CF50082A01A /* ApiManagers */,
+				C18E950221FB2D9D0082A01A /* Coordinator related */,
+				C18E950121FB2D710082A01A /* Screens */,
+				C18E950021FB2D6C0082A01A /* Models */,
+				C18E94FF21FB2D5B0082A01A /* Application */,
 				C18E94F421FB25BF0082A01A /* Assets.xcassets */,
 				C18E94F621FB25BF0082A01A /* LaunchScreen.storyboard */,
-				C18E94F921FB25BF0082A01A /* Info.plist */,
 			);
 			path = SunriseSunset;
+			sourceTree = "<group>";
+		};
+		C18E94FF21FB2D5B0082A01A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C18E94F921FB25BF0082A01A /* Info.plist */,
+				C18E94ED21FB25BC0082A01A /* AppDelegate.swift */,
+				C18E950721FB2F690082A01A /* AppCoordinator.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C18E950021FB2D6C0082A01A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C18E951821FB5CB80082A01A /* CurrentLocationViewModels */,
+				C18E951521FB40780082A01A /* JSONModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C18E950121FB2D710082A01A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C18E951C21FB67710082A01A /* FindCityScreen */,
+				C18E950921FB30F20082A01A /* CurrentLocationScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		C18E950221FB2D9D0082A01A /* Coordinator related */ = {
+			isa = PBXGroup;
+			children = (
+				C18E950321FB2DD90082A01A /* Coordinator.swift */,
+				C18E950521FB2DF90082A01A /* StoryboardInstantiable.swift */,
+				C18E952A21FB85B70082A01A /* UI + extensions.swift */,
+			);
+			path = "Coordinator related";
+			sourceTree = "<group>";
+		};
+		C18E950921FB30F20082A01A /* CurrentLocationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C18E950A21FB31330082A01A /* CurrentLocationViewController.swift */,
+				C18E950E21FB31A70082A01A /* CurrentLocationViewController.storyboard */,
+				C18E951021FB32600082A01A /* CurrentLocationCoordinator.swift */,
+			);
+			path = CurrentLocationScreen;
+			sourceTree = "<group>";
+		};
+		C18E951221FB3CF50082A01A /* ApiManagers */ = {
+			isa = PBXGroup;
+			children = (
+				C18E951321FB3D170082A01A /* SunriseSunsetManager.swift */,
+				C18E952321FB6ABE0082A01A /* GooglePlacesManager.swift */,
+			);
+			path = ApiManagers;
+			sourceTree = "<group>";
+		};
+		C18E951521FB40780082A01A /* JSONModels */ = {
+			isa = PBXGroup;
+			children = (
+				C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */,
+				C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */,
+				C18E952C21FB92780082A01A /* TimeZoneModel.swift */,
+			);
+			path = JSONModels;
+			sourceTree = "<group>";
+		};
+		C18E951821FB5CB80082A01A /* CurrentLocationViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C18E951A21FB5CDF0082A01A /* LocationInfoViewModel.swift */,
+			);
+			path = CurrentLocationViewModels;
+			sourceTree = "<group>";
+		};
+		C18E951C21FB67710082A01A /* FindCityScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C18E951D21FB67A90082A01A /* FindCityViewController.swift */,
+				C18E951F21FB67CE0082A01A /* FindCityViewController.storyboard */,
+				C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */,
+			);
+			path = FindCityScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +238,8 @@
 			files = (
 				C18E94F821FB25BF0082A01A /* LaunchScreen.storyboard in Resources */,
 				C18E94F521FB25BF0082A01A /* Assets.xcassets in Resources */,
-				C18E94F321FB25BC0082A01A /* Main.storyboard in Resources */,
+				C18E950F21FB31A70082A01A /* CurrentLocationViewController.storyboard in Resources */,
+				C18E952021FB67CE0082A01A /* FindCityViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +250,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C18E94F021FB25BC0082A01A /* ViewController.swift in Sources */,
+				C18E952421FB6ABE0082A01A /* GooglePlacesManager.swift in Sources */,
+				C18E951421FB3D170082A01A /* SunriseSunsetManager.swift in Sources */,
+				C18E951721FB40A50082A01A /* SunsetSunriseInfo.swift in Sources */,
+				C18E951121FB32600082A01A /* CurrentLocationCoordinator.swift in Sources */,
+				C18E952221FB67FA0082A01A /* FindCityCoordinator.swift in Sources */,
 				C18E94EE21FB25BC0082A01A /* AppDelegate.swift in Sources */,
+				C18E952621FB6E4D0082A01A /* GooglePlaceInfo.swift in Sources */,
+				C18E950B21FB31330082A01A /* CurrentLocationViewController.swift in Sources */,
+				C18E952D21FB92780082A01A /* TimeZoneModel.swift in Sources */,
+				C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */,
+				C18E951E21FB67A90082A01A /* FindCityViewController.swift in Sources */,
+				C18E950621FB2DF90082A01A /* StoryboardInstantiable.swift in Sources */,
+				C18E952B21FB85B70082A01A /* UI + extensions.swift in Sources */,
+				C18E950421FB2DD90082A01A /* Coordinator.swift in Sources */,
+				C18E951B21FB5CDF0082A01A /* LocationInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C18E94F121FB25BC0082A01A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C18E94F221FB25BC0082A01A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C18E94F621FB25BF0082A01A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,7 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SunriseSunset/Info.plist;
+				INFOPLIST_FILE = SunriseSunset/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SunriseSunset/Info.plist;
+				INFOPLIST_FILE = SunriseSunset/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
