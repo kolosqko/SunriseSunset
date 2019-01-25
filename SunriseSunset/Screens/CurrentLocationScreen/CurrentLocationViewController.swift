@@ -15,7 +15,7 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
     
-    var viewModel: CurrentLocationVCViewModel?
+    var viewModel: LocationInfoViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
                 return
                 
         }
-        viewModel = CurrentLocationVCViewModel(latitude: Float(latitude),
+        viewModel = LocationInfoViewModel(latitude: Float(latitude),
                                                longitude: Float(longitude),
                                                data: data)
     }
@@ -69,6 +69,12 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
             self.longitudeLabel.text = String(viewModel.longitude)
             self.sunriseLabel.text = String(viewModel.sunrise)
             self.sunsetLabel.text = String(viewModel.sunset)
+            self.solarNoonLabel.text = String(viewModel.solarNoon)
+            self.dayLengthLabel.text = String(viewModel.dayLength)
+            self.civilTwilightBeginLabel.text = String(viewModel.civilTwilightBegin)
+            self.civilTwilightEndLabel.text = String(viewModel.civilTwilightEnd)
+            self.astronomicalTwilightBeginLabel.text = String(viewModel.astronomicalTwilightBegin)
+            self.astronomicalTwilightEndLabel.text = String(viewModel.astronomicalTwilightEnd)
         }
     }
     
@@ -77,9 +83,12 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
     
     @IBOutlet weak var sunriseLabel: UILabel!
     @IBOutlet weak var sunsetLabel: UILabel!
-    
-    
-    
+    @IBOutlet weak var solarNoonLabel: UILabel!
+    @IBOutlet weak var dayLengthLabel: UILabel!
+    @IBOutlet weak var civilTwilightBeginLabel: UILabel!
+    @IBOutlet weak var civilTwilightEndLabel: UILabel!
+    @IBOutlet weak var astronomicalTwilightBeginLabel: UILabel!
+    @IBOutlet weak var astronomicalTwilightEndLabel: UILabel!
     
 }
 

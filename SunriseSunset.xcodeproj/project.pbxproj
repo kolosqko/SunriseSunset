@@ -18,13 +18,12 @@
 		C18E951121FB32600082A01A /* CurrentLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951021FB32600082A01A /* CurrentLocationCoordinator.swift */; };
 		C18E951421FB3D170082A01A /* SunriseSunsetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951321FB3D170082A01A /* SunriseSunsetManager.swift */; };
 		C18E951721FB40A50082A01A /* SunsetSunriseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */; };
-		C18E951B21FB5CDF0082A01A /* CurrentLocationVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951A21FB5CDF0082A01A /* CurrentLocationVCViewModel.swift */; };
+		C18E951B21FB5CDF0082A01A /* LocationInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951A21FB5CDF0082A01A /* LocationInfoViewModel.swift */; };
 		C18E951E21FB67A90082A01A /* FindCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E951D21FB67A90082A01A /* FindCityViewController.swift */; };
 		C18E952021FB67CE0082A01A /* FindCityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E951F21FB67CE0082A01A /* FindCityViewController.storyboard */; };
 		C18E952221FB67FA0082A01A /* FindCityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */; };
 		C18E952421FB6ABE0082A01A /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952321FB6ABE0082A01A /* GooglePlacesManager.swift */; };
 		C18E952621FB6E4D0082A01A /* GooglePlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */; };
-		C18E952921FB702D0082A01A /* FindCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E952821FB702D0082A01A /* FindCityViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,13 +40,12 @@
 		C18E951021FB32600082A01A /* CurrentLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationCoordinator.swift; sourceTree = "<group>"; };
 		C18E951321FB3D170082A01A /* SunriseSunsetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseSunsetManager.swift; sourceTree = "<group>"; };
 		C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetSunriseInfo.swift; sourceTree = "<group>"; };
-		C18E951A21FB5CDF0082A01A /* CurrentLocationVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationVCViewModel.swift; sourceTree = "<group>"; };
+		C18E951A21FB5CDF0082A01A /* LocationInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewModel.swift; sourceTree = "<group>"; };
 		C18E951D21FB67A90082A01A /* FindCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityViewController.swift; sourceTree = "<group>"; };
 		C18E951F21FB67CE0082A01A /* FindCityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindCityViewController.storyboard; sourceTree = "<group>"; };
 		C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityCoordinator.swift; sourceTree = "<group>"; };
 		C18E952321FB6ABE0082A01A /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
 		C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlaceInfo.swift; sourceTree = "<group>"; };
-		C18E952821FB702D0082A01A /* FindCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +102,6 @@
 		C18E950021FB2D6C0082A01A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C18E952721FB70160082A01A /* FindCityViewModels */,
 				C18E951821FB5CB80082A01A /* CurrentLocationViewModels */,
 				C18E951521FB40780082A01A /* JSONModels */,
 			);
@@ -160,7 +157,7 @@
 		C18E951821FB5CB80082A01A /* CurrentLocationViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C18E951A21FB5CDF0082A01A /* CurrentLocationVCViewModel.swift */,
+				C18E951A21FB5CDF0082A01A /* LocationInfoViewModel.swift */,
 			);
 			path = CurrentLocationViewModels;
 			sourceTree = "<group>";
@@ -173,14 +170,6 @@
 				C18E952121FB67FA0082A01A /* FindCityCoordinator.swift */,
 			);
 			path = FindCityScreen;
-			sourceTree = "<group>";
-		};
-		C18E952721FB70160082A01A /* FindCityViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				C18E952821FB702D0082A01A /* FindCityViewModel.swift */,
-			);
-			path = FindCityViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,10 +254,9 @@
 				C18E950B21FB31330082A01A /* CurrentLocationViewController.swift in Sources */,
 				C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */,
 				C18E951E21FB67A90082A01A /* FindCityViewController.swift in Sources */,
-				C18E952921FB702D0082A01A /* FindCityViewModel.swift in Sources */,
 				C18E950621FB2DF90082A01A /* StoryboardInstantiable.swift in Sources */,
 				C18E950421FB2DD90082A01A /* Coordinator.swift in Sources */,
-				C18E951B21FB5CDF0082A01A /* CurrentLocationVCViewModel.swift in Sources */,
+				C18E951B21FB5CDF0082A01A /* LocationInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

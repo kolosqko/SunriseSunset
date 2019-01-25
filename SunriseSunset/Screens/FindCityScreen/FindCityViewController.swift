@@ -17,7 +17,7 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
     }
     private var googlePlacecManager = GooglePlacesManager()
     
-    var viewModel: FindCityViewModel? {
+    var viewModel: LocationInfoViewModel? {
         didSet {
             setupViewController()
         }
@@ -35,6 +35,10 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
                                         guard let strongSelf = self else {
                                             return
                                         }
+                                        if result.status != "OK" {
+                                            print(result.status)
+                                            return
+                                        }
                                         let latitude = Float(result.results[0].geometry.location.lat)
                                         let longitude = Float(result.results[0].geometry.location.lng)
                                         strongSelf.sunriseSunsetManager = SunriseSunsetManager(latitude: latitude, longitude: longitude)
@@ -49,7 +53,7 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
             guard let strongSelf = self, let sunriseSunsetManager = self?.sunriseSunsetManager else {
                 return
             }
-            strongSelf.viewModel = FindCityViewModel(latitude: sunriseSunsetManager.latitude,
+            strongSelf.viewModel = LocationInfoViewModel(latitude: sunriseSunsetManager.latitude,
                                                      longitude: sunriseSunsetManager.longitude,
                                                      data: result)
             },
@@ -62,6 +66,12 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var sunriseLabel: UILabel!
     @IBOutlet weak var sunsetLabel: UILabel!
+    @IBOutlet weak var solarNoonLabel: UILabel!
+    @IBOutlet weak var dayLengthLabel: UILabel!
+    @IBOutlet weak var civilTwilightBeginLabel: UILabel!
+    @IBOutlet weak var civilTwilightEndLabel: UILabel!
+    @IBOutlet weak var astronomicalTwilightBeginLabel: UILabel!
+    @IBOutlet weak var astronomicalTwilightEndLabel: UILabel!
     
     @IBOutlet weak var findCityTextField: UITextField!
     
@@ -75,6 +85,12 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
             self.longitudeLabel.text = String(viewModel.longitude)
             self.sunriseLabel.text = String(viewModel.sunrise)
             self.sunsetLabel.text = String(viewModel.sunset)
+            self.solarNoonLabel.text = String(viewModel.solarNoon)
+            self.dayLengthLabel.text = String(viewModel.dayLength)
+            self.civilTwilightBeginLabel.text = String(viewModel.civilTwilightBegin)
+            self.civilTwilightEndLabel.text = String(viewModel.civilTwilightEnd)
+            self.astronomicalTwilightBeginLabel.text = String(viewModel.astronomicalTwilightBegin)
+            self.astronomicalTwilightEndLabel.text = String(viewModel.astronomicalTwilightEnd)
         }
     }
 }
