@@ -10,11 +10,7 @@ import UIKit
 
 class ListOfLocationsViewController: UIViewController, StoryboardInstantiable {
     
-    var viewModel: ListOfLocationsViewModel? {
-        didSet {
-            locationsTableView.reloadData()
-        }
-    }
+    var viewModel: ListOfLocationsViewModel? 
     
     let locationCellIdentifier = "ListOfLocationsTableViewCell"
     let addLocationCellIdentifier = "AddLocationTableViewCell"
@@ -25,6 +21,7 @@ class ListOfLocationsViewController: UIViewController, StoryboardInstantiable {
         super.viewDidLoad()
         setupLocationsTableView()
         viewModel = ListOfLocationsViewModel()
+        viewModel?.delegate = self
     }
     
     private func setupLocationsTableView() {
@@ -56,7 +53,10 @@ extension ListOfLocationsViewController: UITableViewDataSource {
         }
         return cell
     }
-    
-    
 }
 
+extension ListOfLocationsViewController: ListOfLocationsViewModelDelegate {
+    func viewModelDidUpdate() {
+        self.locationsTableView.reloadData()
+    }
+}

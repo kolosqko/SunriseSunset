@@ -8,8 +8,18 @@
 
 import Foundation
 
+protocol ListOfLocationsViewModelDelegate {
+    func viewModelDidUpdate()
+}
+
 class ListOfLocationsViewModel {
-    var locations: [LocationInfo]
+    var locations: [LocationInfo] {
+        didSet {
+            delegate?.viewModelDidUpdate()
+        }
+    }
+    
+    var delegate: ListOfLocationsViewModelDelegate?
     
     init(name: String, latitude: Float, longitude: Float) {
         self.locations = [LocationInfo(name: name, latitude: latitude, longitude: longitude, timeZoneId: "Europe/Kiev")]
