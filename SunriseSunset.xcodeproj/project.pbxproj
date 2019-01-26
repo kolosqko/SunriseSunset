@@ -35,6 +35,9 @@
 		C18E953F21FBC4640082A01A /* AddLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E953D21FBC4640082A01A /* AddLocationTableViewCell.swift */; };
 		C18E954021FBC4640082A01A /* AddLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18E953E21FBC4640082A01A /* AddLocationTableViewCell.xib */; };
 		C18E954221FC6D4A0082A01A /* LocationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E954121FC6D4A0082A01A /* LocationStorage.swift */; };
+		C18E954521FC860D0082A01A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E954421FC860C0082A01A /* InfoViewController.swift */; };
+		C18E954721FC86250082A01A /* InfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E954621FC86250082A01A /* InfoViewController.storyboard */; };
+		C18E954921FC865A0082A01A /* InfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E954821FC865A0082A01A /* InfoCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		C18E953D21FBC4640082A01A /* AddLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationTableViewCell.swift; sourceTree = "<group>"; };
 		C18E953E21FBC4640082A01A /* AddLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLocationTableViewCell.xib; sourceTree = "<group>"; };
 		C18E954121FC6D4A0082A01A /* LocationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStorage.swift; sourceTree = "<group>"; };
+		C18E954421FC860C0082A01A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		C18E954621FC86250082A01A /* InfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoViewController.storyboard; sourceTree = "<group>"; };
+		C18E954821FC865A0082A01A /* InfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,7 @@
 		C18E950121FB2D710082A01A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C18E954321FC85E90082A01A /* LocationInfoScreen */,
 				C18E952E21FBAD440082A01A /* ListOfLocationsScreen */,
 				C18E951C21FB67710082A01A /* FindCityScreen */,
 				C18E950921FB30F20082A01A /* CurrentLocationScreen */,
@@ -229,6 +236,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		C18E954321FC85E90082A01A /* LocationInfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C18E954421FC860C0082A01A /* InfoViewController.swift */,
+				C18E954621FC86250082A01A /* InfoViewController.storyboard */,
+				C18E954821FC865A0082A01A /* InfoCoordinator.swift */,
+			);
+			path = LocationInfoScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +311,7 @@
 				C18E954021FBC4640082A01A /* AddLocationTableViewCell.xib in Resources */,
 				C18E953221FBADA20082A01A /* ListOfLocationsViewController.storyboard in Resources */,
 				C18E952021FB67CE0082A01A /* FindCityViewController.storyboard in Resources */,
+				C18E954721FC86250082A01A /* InfoViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,11 +329,13 @@
 				C18E951121FB32600082A01A /* CurrentLocationCoordinator.swift in Sources */,
 				C18E952221FB67FA0082A01A /* FindCityCoordinator.swift in Sources */,
 				C18E953F21FBC4640082A01A /* AddLocationTableViewCell.swift in Sources */,
+				C18E954921FC865A0082A01A /* InfoCoordinator.swift in Sources */,
 				C18E953721FBAEF10082A01A /* ListOfLocationsViewModel.swift in Sources */,
 				C18E94EE21FB25BC0082A01A /* AppDelegate.swift in Sources */,
 				C18E952621FB6E4D0082A01A /* GooglePlaceInfo.swift in Sources */,
 				C18E950B21FB31330082A01A /* CurrentLocationViewController.swift in Sources */,
 				C18E952D21FB92780082A01A /* TimeZoneModel.swift in Sources */,
+				C18E954521FC860D0082A01A /* InfoViewController.swift in Sources */,
 				C18E954221FC6D4A0082A01A /* LocationStorage.swift in Sources */,
 				C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */,
 				C18E953021FBAD820082A01A /* ListOfLocationsViewController.swift in Sources */,

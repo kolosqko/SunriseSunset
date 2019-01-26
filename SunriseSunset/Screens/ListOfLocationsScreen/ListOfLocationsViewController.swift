@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol ListOfLocationsViewControllerDelegate {
+    func didSelectLocation(_ location: LocationInfo)
+}
+
 class ListOfLocationsViewController: UIViewController, StoryboardInstantiable {
     
-    var viewModel: ListOfLocationsViewModel? 
+    var viewModel: ListOfLocationsViewModel?
+    var delegate: ListOfLocationsViewControllerDelegate?
     
     let locationCellIdentifier = "ListOfLocationsTableViewCell"
     let addLocationCellIdentifier = "AddLocationTableViewCell"
@@ -26,6 +31,7 @@ class ListOfLocationsViewController: UIViewController, StoryboardInstantiable {
     
     private func setupLocationsTableView() {
         locationsTableView.dataSource = self
+        locationsTableView.delegate = self
         let locationCellNib = UINib(nibName: locationCellIdentifier, bundle: nil)
         locationsTableView.register(locationCellNib, forCellReuseIdentifier: locationCellIdentifier)
         let addLocationCellNib = UINib(nibName: addLocationCellIdentifier, bundle: nil)
@@ -52,6 +58,15 @@ extension ListOfLocationsViewController: UITableViewDataSource {
             cell.setupCell(locationInfo: viewModel.locations[indexPath.row])
         }
         return cell
+    }
+}
+
+extension ListOfLocationsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else {
+            return
+        }
+        delegate?.didSelectLocation(viewModel.locations[indexPath.row])
     }
 }
 

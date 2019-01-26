@@ -13,6 +13,7 @@ class ListOfLocationsCoordinator: Coordinator {
     
     private let presenter: UINavigationController
     private var listOfLocationsViewController: ListOfLocationsViewController?
+    private var infoCoordinator: InfoCoordinator?
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -20,7 +21,16 @@ class ListOfLocationsCoordinator: Coordinator {
     
     func start() {
         let listOfLocationsViewController: ListOfLocationsViewController = ListOfLocationsViewController.instantiateViewController()
+        listOfLocationsViewController.delegate = self
         presenter.pushViewController(listOfLocationsViewController, animated: true)
         self.listOfLocationsViewController = listOfLocationsViewController
+    }
+}
+
+extension ListOfLocationsCoordinator: ListOfLocationsViewControllerDelegate{
+    func didSelectLocation(_ location: LocationInfo) {
+        let infoCoordinator = InfoCoordinator(presenter: presenter, locationInfo: location)
+        infoCoordinator.start()
+        self.infoCoordinator = infoCoordinator
     }
 }
