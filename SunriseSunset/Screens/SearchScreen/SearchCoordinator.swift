@@ -22,6 +22,7 @@ class SearchCoordinator: Coordinator {
         let searchViewController: SearchViewController = SearchViewController.instantiateViewController()
         presenter.pushViewController(searchViewController, animated: true)
         searchViewController.delegate = self
+        searchViewController.navigationItem.title = "Find new locations"
         self.searchViewController = searchViewController
     }
 }

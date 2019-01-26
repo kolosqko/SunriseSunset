@@ -23,6 +23,7 @@ class ListOfLocationsCoordinator: Coordinator {
     func start() {
         let listOfLocationsViewController: ListOfLocationsViewController = ListOfLocationsViewController.instantiateViewController()
         listOfLocationsViewController.delegate = self
+        listOfLocationsViewController.navigationItem.title = "Saved locations"
         presenter.pushViewController(listOfLocationsViewController, animated: true)
         self.listOfLocationsViewController = listOfLocationsViewController
     }

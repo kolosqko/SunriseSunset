@@ -197,7 +197,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Thc-3n-jm4" secondAttribute="bottom" constant="15" id="E9L-Ae-eyb"/>
                                     <constraint firstItem="Thc-3n-jm4" firstAttribute="top" secondItem="LCr-zy-aSe" secondAttribute="top" constant="15" id="N8F-4U-R58"/>
@@ -220,19 +220,19 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKQ-tx-HQ6">
                                                 <rect key="frame" x="0.0" y="0.0" width="360" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdd-TX-xqz">
                                                 <rect key="frame" x="0.0" y="46" width="360" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="5Dg-JD-bhB" firstAttribute="leading" secondItem="4KT-KX-guJ" secondAttribute="leading" constant="15" id="LkM-3f-N29"/>
                                     <constraint firstItem="5Dg-JD-bhB" firstAttribute="top" secondItem="4KT-KX-guJ" secondAttribute="top" id="QZk-pt-N8y"/>
@@ -241,7 +241,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hNS-Rt-vV3" firstAttribute="trailing" secondItem="LCr-zy-aSe" secondAttribute="trailing" id="QGk-cm-i2P"/>
                             <constraint firstItem="4KT-KX-guJ" firstAttribute="leading" secondItem="hNS-Rt-vV3" secondAttribute="leading" id="ZLg-mu-4bG"/>

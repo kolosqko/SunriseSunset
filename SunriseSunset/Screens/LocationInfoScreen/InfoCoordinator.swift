@@ -26,6 +26,7 @@ class InfoCoordinator: Coordinator {
     func start() {
         let infoViewController: InfoViewController = InfoViewController.instantiateViewController()
         presenter.pushViewController(infoViewController, animated: true)
+        infoViewController.navigationItem.title = "Information"
         self.infoViewController = infoViewController
         setupViewModel()
     }

@@ -20,8 +20,11 @@ final class AppCoordinator: Coordinator {
         self.window = window
         self.rootViewController = UINavigationController()
         window.rootViewController = rootViewController
-        rootViewController.navigationBar.barTintColor = UIColor.gray
         window.makeKeyAndVisible()
+        UINavigationBar.appearance().barTintColor = UIColor.gray
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.white]
+        
     }
     
     func start(){
