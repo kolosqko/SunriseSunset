@@ -65,11 +65,12 @@ class LocationsStorage {
                 return
             }
             guard let cityName = place.locality,
+                let n = place.administrativeArea,
                 let country = place.country,
                 let timeZoneId = place.timeZone?.identifier else {
                 return
             }
-            let locationInfo = LocationInfo(name: cityName + " " + country,
+            let locationInfo = LocationInfo(name: cityName + ", " + n + ", " + country,
                                             latitude: Float(location.lat),
                                             longitude: Float(location.lng),
                                             timeZoneId: timeZoneId)

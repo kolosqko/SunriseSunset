@@ -21,6 +21,16 @@ class SearchCoordinator: Coordinator {
     func start() {
         let searchViewController: SearchViewController = SearchViewController.instantiateViewController()
         presenter.pushViewController(searchViewController, animated: true)
+        searchViewController.delegate = self
         self.searchViewController = searchViewController
+    }
+}
+
+
+extension SearchCoordinator: SearchViewControllerDelegate {
+    func newLocationFound() {
+        DispatchQueue.main.async {
+            self.presenter.popViewController(animated: true)
+        }
     }
 }

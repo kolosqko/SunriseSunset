@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol SearchViewControllerDelegate {
+    func newLocationFound()
+}
+
 class SearchViewController: UIViewController, StoryboardInstantiable {
     
     private var result = [Prediction]()
     private let googleManager = GooglePlacesManager()
+    
+    var delegate: SearchViewControllerDelegate?
 
     @IBOutlet weak var resultsTableView: UITableView!
     
@@ -35,6 +41,7 @@ class SearchViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         resultsTableView.dataSource = self
+        resultsTableView.delegate = self
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search cities"
@@ -75,6 +82,15 @@ extension SearchViewController: UITableViewDataSource {
 
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        googleManager.findCity(text: result[indexPath.row].description,
+                               onSucces: { [weak self] result in
+                                let location = result.results[0].geometry.location
+                                LocationsStorage.shared.saveLocation(location)
+                                self?.delegate?.newLocationFound()
+        },
+                               onFailure: { errorMessage in
+            
+        })
         
     }
 }
