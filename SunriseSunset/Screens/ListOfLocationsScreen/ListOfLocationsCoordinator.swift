@@ -14,6 +14,7 @@ class ListOfLocationsCoordinator: Coordinator {
     private let presenter: UINavigationController
     private var listOfLocationsViewController: ListOfLocationsViewController?
     private var infoCoordinator: InfoCoordinator?
+    private var searchCoordinator: SearchCoordinator?
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -32,5 +33,11 @@ extension ListOfLocationsCoordinator: ListOfLocationsViewControllerDelegate{
         let infoCoordinator = InfoCoordinator(presenter: presenter, locationInfo: location)
         infoCoordinator.start()
         self.infoCoordinator = infoCoordinator
+    }
+    
+    func addNewlocation() {
+        let searchCoordinator = SearchCoordinator(presenter: presenter)
+        searchCoordinator.start()
+        self.searchCoordinator = searchCoordinator
     }
 }

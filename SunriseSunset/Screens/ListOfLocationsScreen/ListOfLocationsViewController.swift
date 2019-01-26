@@ -10,6 +10,7 @@ import UIKit
 
 protocol ListOfLocationsViewControllerDelegate {
     func didSelectLocation(_ location: LocationInfo)
+    func addNewlocation()
 }
 
 class ListOfLocationsViewController: UIViewController, StoryboardInstantiable {
@@ -66,9 +67,11 @@ extension ListOfLocationsViewController: UITableViewDelegate {
         guard let viewModel = viewModel else {
             return
         }
-        if indexPath.row < viewModel.locations.count {
+        if indexPath.row == viewModel.locations.count {
+            delegate?.addNewlocation()
+            return
+        }
         delegate?.didSelectLocation(viewModel.locations[indexPath.row])
-    }
     }
 }
 

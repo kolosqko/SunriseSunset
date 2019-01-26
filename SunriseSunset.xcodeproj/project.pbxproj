@@ -39,6 +39,9 @@
 		C18E954721FC86250082A01A /* InfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E954621FC86250082A01A /* InfoViewController.storyboard */; };
 		C18E954921FC865A0082A01A /* InfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E954821FC865A0082A01A /* InfoCoordinator.swift */; };
 		C18E954D21FC95B40082A01A /* AutocompleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E954C21FC95B40082A01A /* AutocompleteModel.swift */; };
+		C18E955021FC9A4A0082A01A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E954F21FC9A4A0082A01A /* SearchViewController.swift */; };
+		C18E955221FC9A640082A01A /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E955121FC9A640082A01A /* SearchViewController.storyboard */; };
+		C18E955421FC9A890082A01A /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E955321FC9A880082A01A /* SearchCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		C18E954621FC86250082A01A /* InfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoViewController.storyboard; sourceTree = "<group>"; };
 		C18E954821FC865A0082A01A /* InfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCoordinator.swift; sourceTree = "<group>"; };
 		C18E954C21FC95B40082A01A /* AutocompleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteModel.swift; sourceTree = "<group>"; };
+		C18E954F21FC9A4A0082A01A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C18E955121FC9A640082A01A /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		C18E955321FC9A880082A01A /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 		C18E950121FB2D710082A01A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C18E954E21FC9A290082A01A /* SearchScreen */,
 				C18E954321FC85E90082A01A /* LocationInfoScreen */,
 				C18E952E21FBAD440082A01A /* ListOfLocationsScreen */,
 				C18E951C21FB67710082A01A /* FindCityScreen */,
@@ -249,6 +256,16 @@
 			path = LocationInfoScreen;
 			sourceTree = "<group>";
 		};
+		C18E954E21FC9A290082A01A /* SearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C18E954F21FC9A4A0082A01A /* SearchViewController.swift */,
+				C18E955121FC9A640082A01A /* SearchViewController.storyboard */,
+				C18E955321FC9A880082A01A /* SearchCoordinator.swift */,
+			);
+			path = SearchScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +329,7 @@
 				C18E94F521FB25BF0082A01A /* Assets.xcassets in Resources */,
 				C18E950F21FB31A70082A01A /* CurrentLocationViewController.storyboard in Resources */,
 				C18E954021FBC4640082A01A /* AddLocationTableViewCell.xib in Resources */,
+				C18E955221FC9A640082A01A /* SearchViewController.storyboard in Resources */,
 				C18E953221FBADA20082A01A /* ListOfLocationsViewController.storyboard in Resources */,
 				C18E952021FB67CE0082A01A /* FindCityViewController.storyboard in Resources */,
 				C18E954721FC86250082A01A /* InfoViewController.storyboard in Resources */,
@@ -339,7 +357,9 @@
 				C18E950B21FB31330082A01A /* CurrentLocationViewController.swift in Sources */,
 				C18E952D21FB92780082A01A /* TimeZoneModel.swift in Sources */,
 				C18E954521FC860D0082A01A /* InfoViewController.swift in Sources */,
+				C18E955421FC9A890082A01A /* SearchCoordinator.swift in Sources */,
 				C18E954221FC6D4A0082A01A /* LocationStorage.swift in Sources */,
+				C18E955021FC9A4A0082A01A /* SearchViewController.swift in Sources */,
 				C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */,
 				C18E953021FBAD820082A01A /* ListOfLocationsViewController.swift in Sources */,
 				C18E951E21FB67A90082A01A /* FindCityViewController.swift in Sources */,
