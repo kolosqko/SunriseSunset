@@ -38,6 +38,10 @@ class ListOfLocationsViewController: UIViewController, StoryboardInstantiable {
         let addLocationCellNib = UINib(nibName: addLocationCellIdentifier, bundle: nil)
         locationsTableView.register(addLocationCellNib, forCellReuseIdentifier: addLocationCellIdentifier)
     }
+    
+    @IBOutlet weak var currentLocationNameLabel: UILabel!
+    
+    
 }
 
 
@@ -77,6 +81,9 @@ extension ListOfLocationsViewController: UITableViewDelegate {
 
 extension ListOfLocationsViewController: ListOfLocationsViewModelDelegate {
     func viewModelDidUpdate() {
+        DispatchQueue.main.async {
+            self.currentLocationNameLabel.text = "Current location: \(self.viewModel?.currentLocation)"
+        }
         self.locationsTableView.reloadData()
     }
 }

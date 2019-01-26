@@ -19,26 +19,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wHY-av-sJA">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyS-tb-knt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibt-jW-rje">
+                                        <rect key="frame" x="15" y="0.0" width="360" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ibt-jW-rje" firstAttribute="top" secondItem="TyS-tb-knt" secondAttribute="top" id="78V-Xf-1UH"/>
+                                    <constraint firstItem="ibt-jW-rje" firstAttribute="leading" secondItem="TyS-tb-knt" secondAttribute="leading" constant="15" id="A8K-Kd-Esh"/>
+                                    <constraint firstAttribute="bottom" secondItem="ibt-jW-rje" secondAttribute="bottom" id="TUh-1G-7Of"/>
+                                    <constraint firstAttribute="trailing" secondItem="ibt-jW-rje" secondAttribute="trailing" id="v94-Yq-gEq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="i1a-JJ-fBn" firstAttribute="bottom" secondItem="wHY-av-sJA" secondAttribute="bottom" id="K40-Fp-bxe"/>
+                            <constraint firstItem="TyS-tb-knt" firstAttribute="top" secondItem="i1a-JJ-fBn" secondAttribute="top" id="MMv-zH-mbm"/>
+                            <constraint firstItem="wHY-av-sJA" firstAttribute="top" secondItem="TyS-tb-knt" secondAttribute="bottom" id="TJc-OP-uH8"/>
                             <constraint firstItem="wHY-av-sJA" firstAttribute="leading" secondItem="i1a-JJ-fBn" secondAttribute="leading" id="ZPT-j7-URe"/>
+                            <constraint firstItem="i1a-JJ-fBn" firstAttribute="trailing" secondItem="TyS-tb-knt" secondAttribute="trailing" id="ohF-Vf-bzu"/>
+                            <constraint firstItem="TyS-tb-knt" firstAttribute="leading" secondItem="i1a-JJ-fBn" secondAttribute="leading" id="qTu-xH-ocl"/>
                             <constraint firstItem="i1a-JJ-fBn" firstAttribute="trailing" secondItem="wHY-av-sJA" secondAttribute="trailing" id="sbL-eO-Zqi"/>
-                            <constraint firstItem="wHY-av-sJA" firstAttribute="top" secondItem="i1a-JJ-fBn" secondAttribute="top" id="vP7-v8-RK7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i1a-JJ-fBn"/>
                     </view>
                     <connections>
+                        <outlet property="currentLocationNameLabel" destination="ibt-jW-rje" id="ike-ix-yPi"/>
                         <outlet property="locationsTableView" destination="wHY-av-sJA" id="7bQ-rt-5Nu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6x-GM-4i0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134" y="125"/>
+            <point key="canvasLocation" x="133.59999999999999" y="124.58770614692655"/>
         </scene>
     </scenes>
 </document>
