@@ -10,8 +10,8 @@ import Foundation
 
 class GooglePlacesManager {
     
-    private let key = "AIzaSyATmJrmL0nLUp5uZvzzCeZLV7nWIE1yvFw"
-    private let timeZimeKey = "AIzaSyDq5hWky2YGA_YWkTlVLZyPScyXTAkH9Es"
+    private let key = "AIzaSyDq5hWky2YGA_YWkTlVLZyPScyXTAkH9Es"
+    private let timeZoneKey = "AIzaSyDq5hWky2YGA_YWkTlVLZyPScyXTAkH9Es"
     
     func findCity(text: String,
                   onSucces: @escaping (GooglePlaceInfo) -> (),
@@ -46,7 +46,7 @@ class GooglePlacesManager {
                      longitude: Float,
                      onSucces: @escaping (TimeZoneModel) -> (),
                      onFailure: @escaping (String) -> ()) {
-        let strURL = "https://maps.googleapis.com/maps/api/timezone/json?location=\(String(format:"%f", latitude)),\(String(format:"%f", longitude))&timestamp=1331766000&key=\(timeZimeKey)"
+        let strURL = "https://maps.googleapis.com/maps/api/timezone/json?location=\(String(format:"%f", latitude)),\(String(format:"%f", longitude))&timestamp=1331766000&key=\(timeZoneKey)"
         guard let url = URL(string: strURL) else {
             onFailure("Failed URL")
             return
@@ -54,6 +54,7 @@ class GooglePlacesManager {
         let task = URLSession.shared.dataTask(with: url) { (data, resopnse, error) in
             if error != nil {
                 onFailure(error?.localizedDescription ?? "URLSession error")
+                return
             }
             guard let data = data else {
                 onFailure("no data")
@@ -65,6 +66,33 @@ class GooglePlacesManager {
             }
             if result.status != "OK" {
                 onFailure(result.status)
+                return
+            }
+            onSucces(result)
+        }
+        task.resume()
+    }
+    
+    
+    func autocomplete(text: String,
+                      onSucces: @escaping (AutocompleteModel) -> (),
+                      onFailure: @escaping (String) -> ()) {
+        let strURL = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(text)&types=(cities)&key=\(key)"
+        guard let url = URL(string: strURL) else {
+            onFailure("Failed URL")
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { (data, resopnse, error) in
+            if error != nil {
+                onFailure(error?.localizedDescription ?? "URLSession error")
+                return
+            }
+            guard let data = data else {
+                onFailure("no data")
+                return
+            }
+            guard let result = try? JSONDecoder().decode(AutocompleteModel.self, from: data) else {
+                onFailure("Error: Couldn't parse json")
                 return
             }
             onSucces(result)

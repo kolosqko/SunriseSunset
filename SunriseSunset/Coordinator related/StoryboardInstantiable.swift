@@ -17,14 +17,12 @@ protocol StoryboardInstantiable: NSObjectProtocol {
 extension StoryboardInstantiable where Self: UIViewController {
     
     static var defaultFileName: String {
-        // swiftlint:disable:next force_unwrapping
         return NSStringFromClass(Self.self).components(separatedBy: ".").last!
     }
     
     static func instantiateViewController<T>(_ bundle: Bundle? = nil) -> T {
         let fileName = defaultFileName
         let sb = UIStoryboard(name: fileName, bundle: bundle)
-        // swiftlint:disable:next force_cast
         return sb.instantiateInitialViewController() as! T
     }
 }

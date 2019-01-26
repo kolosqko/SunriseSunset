@@ -14,20 +14,23 @@ final class AppCoordinator: Coordinator {
     
     private let window: UIWindow
     private let rootViewController: UINavigationController
-    private var currentLocationCoordinator: CurrentLocationCoordinator?
+    private var listOfLocationsCoordinator: ListOfLocationsCoordinator?
     
     init(window: UIWindow) {
         self.window = window
         self.rootViewController = UINavigationController()
         window.rootViewController = rootViewController
-        rootViewController.navigationBar.barTintColor = UIColor.gray
         window.makeKeyAndVisible()
+        UINavigationBar.appearance().barTintColor = UIColor.gray
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.white]
+        
     }
     
     func start(){
-        self.currentLocationCoordinator = CurrentLocationCoordinator(presenter: self.rootViewController)
-        self.currentLocationCoordinator?.start()
-        
+
+        self.listOfLocationsCoordinator = ListOfLocationsCoordinator(presenter: self.rootViewController)
+        self.listOfLocationsCoordinator?.start()
 
     }
     
