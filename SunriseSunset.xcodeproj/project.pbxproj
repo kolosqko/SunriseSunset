@@ -38,6 +38,7 @@
 		C18E954521FC860D0082A01A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E954421FC860C0082A01A /* InfoViewController.swift */; };
 		C18E954721FC86250082A01A /* InfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E954621FC86250082A01A /* InfoViewController.storyboard */; };
 		C18E954921FC865A0082A01A /* InfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E954821FC865A0082A01A /* InfoCoordinator.swift */; };
+		C18E954D21FC95B40082A01A /* AutocompleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E954C21FC95B40082A01A /* AutocompleteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		C18E954421FC860C0082A01A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		C18E954621FC86250082A01A /* InfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoViewController.storyboard; sourceTree = "<group>"; };
 		C18E954821FC865A0082A01A /* InfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCoordinator.swift; sourceTree = "<group>"; };
+		C18E954C21FC95B40082A01A /* AutocompleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				C18E951621FB40A50082A01A /* SunsetSunriseInfo.swift */,
 				C18E952521FB6E4D0082A01A /* GooglePlaceInfo.swift */,
 				C18E952C21FB92780082A01A /* TimeZoneModel.swift */,
+				C18E954C21FC95B40082A01A /* AutocompleteModel.swift */,
 			);
 			path = JSONModels;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				C18E953B21FBB20C0082A01A /* ListOfLocationsTableViewCell.swift in Sources */,
 				C18E950621FB2DF90082A01A /* StoryboardInstantiable.swift in Sources */,
 				C18E952B21FB85B70082A01A /* UI + extensions.swift in Sources */,
+				C18E954D21FC95B40082A01A /* AutocompleteModel.swift in Sources */,
 				C18E950421FB2DD90082A01A /* Coordinator.swift in Sources */,
 				C18E951B21FB5CDF0082A01A /* LocationInfoViewModel.swift in Sources */,
 			);
