@@ -28,15 +28,24 @@ class LocationInfoViewModel {
         self.timeZoneId = locationInfo.timeZoneId
         self.latitude = locationInfo.latitude
         self.longitude = locationInfo.longitude
-        self.sunrise = data.results.sunrise.components(separatedBy: ["T", "+"])[1]
-        self.sunset = data.results.sunset.components(separatedBy: ["T", "+"])[1]
-        self.solarNoon = data.results.solarNoon.components(separatedBy: ["T", "+"])[1]
+        self.sunrise = LocationInfoViewModel.timeInRightTimeZone(data.results.sunrise, timeZoneId: locationInfo.timeZoneId)
+        self.sunset = LocationInfoViewModel.timeInRightTimeZone(data.results.sunset, timeZoneId: locationInfo.timeZoneId)
+        self.solarNoon = LocationInfoViewModel.timeInRightTimeZone(data.results.solarNoon, timeZoneId: locationInfo.timeZoneId)
         self.dayLength = "\(data.results.dayLength / 3600):\((data.results.dayLength % 3600)/60):\((data.results.dayLength % 3600) % 60)"
-        self.civilTwilightBegin = data.results.civilTwilightBegin.components(separatedBy: ["T", "+"])[1]
-        self.civilTwilightEnd = data.results.civilTwilightEnd.components(separatedBy: ["T", "+"])[1]
-        self.astronomicalTwilightBegin = data.results.astronomicalTwilightBegin.components(separatedBy: ["T", "+"])[1]
-        self.astronomicalTwilightEnd = data.results.astronomicalTwilightEnd.components(separatedBy: ["T", "+"])[1]
-
-
+        self.civilTwilightBegin = LocationInfoViewModel.timeInRightTimeZone(data.results.civilTwilightBegin, timeZoneId: locationInfo.timeZoneId)
+        self.civilTwilightEnd = LocationInfoViewModel.timeInRightTimeZone(data.results.civilTwilightEnd, timeZoneId: locationInfo.timeZoneId)
+        self.astronomicalTwilightBegin = LocationInfoViewModel.timeInRightTimeZone(data.results.astronomicalTwilightBegin, timeZoneId: locationInfo.timeZoneId)
+        self.astronomicalTwilightEnd = LocationInfoViewModel.timeInRightTimeZone(data.results.astronomicalTwilightEnd, timeZoneId: locationInfo.timeZoneId)
+    }
+    
+    private static func timeInRightTimeZone(_ dateString: String, timeZoneId: String) -> String {
+        guard let date = dateString.toDate() else {
+            return dateString
+        }
+        guard let timeZone = TimeZone(identifier: timeZoneId) else {
+            return dateString
+        }
+        let timeDifference = timeZone.secondsFromGMT()
+        return date.addingTimeInterval(Double(timeDifference)).toString()
     }
 }
