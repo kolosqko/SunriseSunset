@@ -15,4 +15,5 @@ struct AutocompleteModel: Decodable {
 
 struct Prediction: Decodable {
     let description: String
+    let id: String
 }

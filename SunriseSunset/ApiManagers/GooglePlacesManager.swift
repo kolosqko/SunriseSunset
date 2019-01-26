@@ -10,7 +10,7 @@ import Foundation
 
 class GooglePlacesManager {
     
-    private let key = "AIzaSyATmJrmL0nLUp5uZvzzCeZLV7nWIE1yvFw"
+    private let key = "AIzaSyDq5hWky2YGA_YWkTlVLZyPScyXTAkH9Es"
     private let timeZoneKey = "AIzaSyDq5hWky2YGA_YWkTlVLZyPScyXTAkH9Es"
     
     func findCity(text: String,
