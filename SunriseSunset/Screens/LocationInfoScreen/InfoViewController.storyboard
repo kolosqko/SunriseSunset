@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCr-zy-aSe">
-                                <rect key="frame" x="15" y="35" width="345" height="280"/>
+                                <rect key="frame" x="15" y="71" width="345" height="280"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Thc-3n-jm4">
                                         <rect key="frame" x="15" y="15" width="315" height="250"/>
@@ -211,12 +211,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4KT-KX-guJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKQ-tx-HQ6">
+                                        <rect key="frame" x="20" y="0.0" width="355" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="MKQ-tx-HQ6" firstAttribute="leading" secondItem="4KT-KX-guJ" secondAttribute="leading" constant="20" id="Qkh-Lu-gBU"/>
+                                    <constraint firstItem="MKQ-tx-HQ6" firstAttribute="top" secondItem="4KT-KX-guJ" secondAttribute="top" id="f9M-zL-jGU"/>
+                                    <constraint firstAttribute="bottom" secondItem="MKQ-tx-HQ6" secondAttribute="bottom" id="f9v-Ur-XhA"/>
+                                    <constraint firstAttribute="trailing" secondItem="MKQ-tx-HQ6" secondAttribute="trailing" id="vgO-gr-nx3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hNS-Rt-vV3" firstAttribute="trailing" secondItem="LCr-zy-aSe" secondAttribute="trailing" constant="15" id="QD9-nl-TLI"/>
-                            <constraint firstItem="LCr-zy-aSe" firstAttribute="top" secondItem="hNS-Rt-vV3" secondAttribute="top" constant="15" id="WIe-EA-R5k"/>
-                            <constraint firstItem="LCr-zy-aSe" firstAttribute="leading" secondItem="hNS-Rt-vV3" secondAttribute="leading" constant="15" id="ixh-Qi-QdW"/>
+                            <constraint firstItem="hNS-Rt-vV3" firstAttribute="trailing" secondItem="LCr-zy-aSe" secondAttribute="trailing" constant="15" id="QGk-cm-i2P"/>
+                            <constraint firstItem="4KT-KX-guJ" firstAttribute="leading" secondItem="hNS-Rt-vV3" secondAttribute="leading" id="ZLg-mu-4bG"/>
+                            <constraint firstItem="4KT-KX-guJ" firstAttribute="top" secondItem="hNS-Rt-vV3" secondAttribute="top" id="eBO-WT-fg1"/>
+                            <constraint firstItem="LCr-zy-aSe" firstAttribute="leading" secondItem="hNS-Rt-vV3" secondAttribute="leading" constant="15" id="qNJ-pw-ttf"/>
+                            <constraint firstItem="hNS-Rt-vV3" firstAttribute="trailing" secondItem="4KT-KX-guJ" secondAttribute="trailing" id="svS-zq-ZsR"/>
+                            <constraint firstItem="LCr-zy-aSe" firstAttribute="top" secondItem="4KT-KX-guJ" secondAttribute="bottom" constant="15" id="uxB-h5-l6w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hNS-Rt-vV3"/>
                     </view>
@@ -227,6 +248,7 @@
                         <outlet property="civilTwilightEndLabel" destination="azV-Ez-luA" id="OlY-Be-tPd"/>
                         <outlet property="dayLengthLabel" destination="Oyu-aA-xGQ" id="nQE-ds-9Ux"/>
                         <outlet property="latitudeLabel" destination="3ue-W7-Iuz" id="bex-mr-B1b"/>
+                        <outlet property="locationNameLabel" destination="MKQ-tx-HQ6" id="KVt-a5-wtv"/>
                         <outlet property="longitudeLabel" destination="BmJ-mq-cfw" id="WV9-Ag-xnz"/>
                         <outlet property="solarNoonLabel" destination="5gm-xG-rWS" id="vmz-Gl-cIg"/>
                         <outlet property="sunriseLabel" destination="TfT-f9-scR" id="6IC-E1-Awl"/>

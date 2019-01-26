@@ -58,9 +58,9 @@ class FindCityViewController: UIViewController, StoryboardInstantiable {
             guard let strongSelf = self, let sunriseSunsetManager = self?.sunriseSunsetManager else {
                 return
             }
-            strongSelf.viewModel = LocationInfoViewModel(latitude: sunriseSunsetManager.latitude,
-                                                     longitude: sunriseSunsetManager.longitude,
-                                                     data: result)
+//            strongSelf.viewModel = LocationInfoViewModel(latitude: sunriseSunsetManager.latitude,
+//                                                     longitude: sunriseSunsetManager.longitude,
+//                                                     data: result)
             },
                                                    onFailure: { [weak self] (errorMessage) in
                                                     guard let strongSelf = self else {

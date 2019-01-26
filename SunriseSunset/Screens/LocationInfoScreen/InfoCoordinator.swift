@@ -36,11 +36,7 @@ class InfoCoordinator: Coordinator {
             guard let strongSelf = self else {
                 return
             }
-            let lat = strongSelf.locationInfo.latitude
-            let lng = strongSelf.locationInfo.longitude
-            strongSelf.infoViewController?.viewModel = LocationInfoViewModel(latitude: lat,
-                                                                             longitude: lng,
-                                                                             data: data)
+            strongSelf.infoViewController?.viewModel = LocationInfoViewModel(locationInfo: strongSelf.locationInfo, data: data)
 
             }, onFailure: { [weak self] (errorMessage) in
 //                guard let strongSelf = self else {

@@ -66,7 +66,9 @@ extension ListOfLocationsViewController: UITableViewDelegate {
         guard let viewModel = viewModel else {
             return
         }
+        if indexPath.row < viewModel.locations.count {
         delegate?.didSelectLocation(viewModel.locations[indexPath.row])
+    }
     }
 }
 

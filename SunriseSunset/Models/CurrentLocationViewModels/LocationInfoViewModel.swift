@@ -10,6 +10,8 @@ import Foundation
 
 
 class LocationInfoViewModel {
+    let locationName: String
+    let timeZoneId: String
     let latitude: Float
     let longitude: Float
     let sunrise: String
@@ -21,9 +23,11 @@ class LocationInfoViewModel {
     let astronomicalTwilightBegin: String
     let astronomicalTwilightEnd: String
     
-    init(latitude: Float, longitude: Float, data: SunsetSunriseInfo) {
-        self.latitude = latitude
-        self.longitude = longitude
+    init(locationInfo: LocationInfo, data: SunsetSunriseInfo) {
+        self.locationName = locationInfo.locationName
+        self.timeZoneId = locationInfo.timeZoneId
+        self.latitude = locationInfo.latitude
+        self.longitude = locationInfo.longitude
         self.sunrise = data.results.sunrise.components(separatedBy: ["T", "+"])[1]
         self.sunset = data.results.sunset.components(separatedBy: ["T", "+"])[1]
         self.solarNoon = data.results.solarNoon.components(separatedBy: ["T", "+"])[1]

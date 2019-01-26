@@ -60,9 +60,9 @@ class CurrentLocationViewController: UIViewController, StoryboardInstantiable {
                 return
                 
         }
-        viewModel = LocationInfoViewModel(latitude: Float(latitude),
-                                               longitude: Float(longitude),
-                                               data: data)
+//        viewModel = LocationInfoViewModel(latitude: Float(latitude),
+//                                               longitude: Float(longitude),
+//                                               data: data)
     }
     
     private func setupViewController() {

@@ -16,7 +16,8 @@ class InfoViewController: UIViewController, StoryboardInstantiable {
         }
     }
     
-
+    @IBOutlet weak var locationNameLabel: UILabel!
+    
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var sunriseLabel: UILabel!
@@ -34,6 +35,7 @@ class InfoViewController: UIViewController, StoryboardInstantiable {
         }
         
         DispatchQueue.main.async {
+            self.locationNameLabel.text = viewModel.locationName
             self.latitudeLabel.text = String(viewModel.latitude)
             self.longitudeLabel.text = String(viewModel.longitude)
             self.sunriseLabel.text = String(viewModel.sunrise)
