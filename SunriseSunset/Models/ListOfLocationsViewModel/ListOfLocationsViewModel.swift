@@ -21,10 +21,6 @@ class ListOfLocationsViewModel {
     
     var delegate: ListOfLocationsViewModelDelegate?
     
-    init(name: String, latitude: Float, longitude: Float) {
-        self.locations = [LocationInfo(name: name, latitude: latitude, longitude: longitude, timeZoneId: "Europe/Kiev")]
-    }
-    
     init() {
         self.locations = LocationsStorage.shared.locations
         LocationsStorage.shared.delegate = self

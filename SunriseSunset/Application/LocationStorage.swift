@@ -9,6 +9,10 @@
 import Foundation
 import CoreLocation
 
+protocol LocationStorageDelegateProtocol {
+    func locationsDidUpdate()
+}
+
 class LocationsStorage {
     static let shared = LocationsStorage()
     
@@ -92,7 +96,5 @@ class LocationsStorage {
 }
 
 
-protocol LocationStorageDelegateProtocol {
-    func locationsDidUpdate()
-}
+
 

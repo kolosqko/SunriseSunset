@@ -29,12 +29,12 @@ class SearchViewController: UIViewController, StoryboardInstantiable {
     
     private func filterPossibleResults(_ searchText: String, scope: String = "All") {
         googleManager.autocomplete(text: searchText, onSucces: { [weak self] result in
-            self?.result = result.predictions
             DispatchQueue.main.async {
+                self?.result = result.predictions
                 self?.resultsTableView.reloadData()
             }
-        }, onFailure: { errorMessage in
-            print(errorMessage)
+        }, onFailure: { [weak self] errorMessage in
+            self?.showErrorAlert(errorMessage: errorMessage)
         })
     }
     
@@ -48,6 +48,11 @@ class SearchViewController: UIViewController, StoryboardInstantiable {
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
 
 }

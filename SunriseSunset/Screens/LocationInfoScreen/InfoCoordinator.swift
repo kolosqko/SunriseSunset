@@ -32,17 +32,13 @@ class InfoCoordinator: Coordinator {
     
     private func setupViewModel() {
         sunriseSunsetManager.getSunriseSunsetInfo(onSucces: { [weak self] (data) in
-            print(data.results.sunrise)
             guard let strongSelf = self else {
                 return
             }
             strongSelf.infoViewController?.viewModel = LocationInfoViewModel(locationInfo: strongSelf.locationInfo, data: data)
 
             }, onFailure: { [weak self] (errorMessage) in
-//                guard let strongSelf = self else {
-//                    return
-//                }
-//                strongSelf.showErrorAlert(errorMessage: errorMessage)
+                self?.infoViewController?.showErrorAlert(errorMessage: errorMessage)
         })
     }
 }

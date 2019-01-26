@@ -20,6 +20,8 @@ extension UIView {
             return Float(layer.cornerRadius)
         }
     }
+    
+    
 }
 
 
@@ -30,5 +32,14 @@ extension UINavigationController {
     
     open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
+    }
+}
+
+
+extension UIViewController {
+    func showErrorAlert(errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
