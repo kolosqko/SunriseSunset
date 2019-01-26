@@ -220,6 +220,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hNS-Rt-vV3"/>
                     </view>
+                    <connections>
+                        <outlet property="astronomicalTwilightBeginLabel" destination="kSD-j0-uQy" id="4d4-wD-tAk"/>
+                        <outlet property="astronomicalTwilightEndLabel" destination="kpZ-s8-UsF" id="UNE-gx-uM5"/>
+                        <outlet property="civilTwilightBeginLabel" destination="ppM-jd-47f" id="yXZ-zh-ytn"/>
+                        <outlet property="civilTwilightEndLabel" destination="azV-Ez-luA" id="OlY-Be-tPd"/>
+                        <outlet property="dayLengthLabel" destination="Oyu-aA-xGQ" id="nQE-ds-9Ux"/>
+                        <outlet property="latitudeLabel" destination="3ue-W7-Iuz" id="bex-mr-B1b"/>
+                        <outlet property="longitudeLabel" destination="BmJ-mq-cfw" id="WV9-Ag-xnz"/>
+                        <outlet property="solarNoonLabel" destination="5gm-xG-rWS" id="vmz-Gl-cIg"/>
+                        <outlet property="sunriseLabel" destination="TfT-f9-scR" id="6IC-E1-Awl"/>
+                        <outlet property="sunsetLabel" destination="I2b-sn-iQ6" id="8SL-Hf-Sn9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhE-6d-4te" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

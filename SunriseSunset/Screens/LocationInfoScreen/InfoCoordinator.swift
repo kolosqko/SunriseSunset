@@ -14,15 +14,39 @@ class InfoCoordinator: Coordinator {
     private let presenter: UINavigationController
     private var infoViewController: InfoViewController?
     private let locationInfo: LocationInfo
+    private let sunriseSunsetManager: SunriseSunsetManager
     
     init(presenter: UINavigationController, locationInfo: LocationInfo) {
         self.presenter = presenter
         self.locationInfo = locationInfo
+        self.sunriseSunsetManager = SunriseSunsetManager(latitude: locationInfo.latitude,
+                                                         longitude: locationInfo.longitude)
     }
     
     func start() {
         let infoViewController: InfoViewController = InfoViewController.instantiateViewController()
         presenter.pushViewController(infoViewController, animated: true)
         self.infoViewController = infoViewController
+        setupViewModel()
+    }
+    
+    private func setupViewModel() {
+        sunriseSunsetManager.getSunriseSunsetInfo(onSucces: { [weak self] (data) in
+            print(data.results.sunrise)
+            guard let strongSelf = self else {
+                return
+            }
+            let lat = strongSelf.locationInfo.latitude
+            let lng = strongSelf.locationInfo.longitude
+            strongSelf.infoViewController?.viewModel = LocationInfoViewModel(latitude: lat,
+                                                                             longitude: lng,
+                                                                             data: data)
+
+            }, onFailure: { [weak self] (errorMessage) in
+//                guard let strongSelf = self else {
+//                    return
+//                }
+//                strongSelf.showErrorAlert(errorMessage: errorMessage)
+        })
     }
 }
