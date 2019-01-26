@@ -20,7 +20,12 @@ struct Result: Decodable {
 struct Geometry: Decodable{
     let location: Location
 }
-struct Location: Decodable{
+struct Location: Decodable, Encodable{
     let lat: Double
     let lng: Double
+    
+    init(lat: Double, lng: Double) {
+        self.lat = lat
+        self.lng = lng
+    }
 }

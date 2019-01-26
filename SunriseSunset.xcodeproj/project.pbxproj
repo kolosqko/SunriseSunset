@@ -34,6 +34,7 @@
 		C18E953C21FBB20C0082A01A /* ListOfLocationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18E953A21FBB20C0082A01A /* ListOfLocationsTableViewCell.xib */; };
 		C18E953F21FBC4640082A01A /* AddLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E953D21FBC4640082A01A /* AddLocationTableViewCell.swift */; };
 		C18E954021FBC4640082A01A /* AddLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18E953E21FBC4640082A01A /* AddLocationTableViewCell.xib */; };
+		C18E954221FC6D4A0082A01A /* LocationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E954121FC6D4A0082A01A /* LocationStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		C18E953A21FBB20C0082A01A /* ListOfLocationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListOfLocationsTableViewCell.xib; sourceTree = "<group>"; };
 		C18E953D21FBC4640082A01A /* AddLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationTableViewCell.swift; sourceTree = "<group>"; };
 		C18E953E21FBC4640082A01A /* AddLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLocationTableViewCell.xib; sourceTree = "<group>"; };
+		C18E954121FC6D4A0082A01A /* LocationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				C18E94F921FB25BF0082A01A /* Info.plist */,
 				C18E94ED21FB25BC0082A01A /* AppDelegate.swift */,
 				C18E950721FB2F690082A01A /* AppCoordinator.swift */,
+				C18E954121FC6D4A0082A01A /* LocationStorage.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				C18E952621FB6E4D0082A01A /* GooglePlaceInfo.swift in Sources */,
 				C18E950B21FB31330082A01A /* CurrentLocationViewController.swift in Sources */,
 				C18E952D21FB92780082A01A /* TimeZoneModel.swift in Sources */,
+				C18E954221FC6D4A0082A01A /* LocationStorage.swift in Sources */,
 				C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */,
 				C18E953021FBAD820082A01A /* ListOfLocationsViewController.swift in Sources */,
 				C18E951E21FB67A90082A01A /* FindCityViewController.swift in Sources */,
