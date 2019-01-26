@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 
 class ListOfLocationsViewController: UIViewController, StoryboardInstantiable {
     
@@ -16,8 +15,7 @@ class ListOfLocationsViewController: UIViewController, StoryboardInstantiable {
             locationsTableView.reloadData()
         }
     }
-    private let locationManager = CLLocationManager()
-
+    
     let locationCellIdentifier = "ListOfLocationsTableViewCell"
     let addLocationCellIdentifier = "AddLocationTableViewCell"
 
@@ -26,7 +24,7 @@ class ListOfLocationsViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationsTableView()
-        setupLocationManager()
+        viewModel = ListOfLocationsViewModel()
     }
     
     private func setupLocationsTableView() {
@@ -35,12 +33,6 @@ class ListOfLocationsViewController: UIViewController, StoryboardInstantiable {
         locationsTableView.register(locationCellNib, forCellReuseIdentifier: locationCellIdentifier)
         let addLocationCellNib = UINib(nibName: addLocationCellIdentifier, bundle: nil)
         locationsTableView.register(addLocationCellNib, forCellReuseIdentifier: addLocationCellIdentifier)
-    }
-    
-    private func setupLocationManager() {
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.delegate = self
-        locationManager.requestLocation()
     }
 }
 
@@ -68,25 +60,3 @@ extension ListOfLocationsViewController: UITableViewDataSource {
     
 }
 
-
-extension ListOfLocationsViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let latitude = manager.location?.coordinate.latitude,
-            let longitude = manager.location?.coordinate.longitude  else {
-            return
-        }
-        guard let viewModel = viewModel else {
-            self.viewModel = ListOfLocationsViewModel(name: "Current location",
-                                                 latitude: Float(latitude),
-                                                 longitude: Float(longitude))
-            return
-        }
-        viewModel.locations[0] = LocationInfo(name: "Current location",
-                                              latitude: Float(latitude),
-                                              longitude: Float(longitude))
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
-    }
-}

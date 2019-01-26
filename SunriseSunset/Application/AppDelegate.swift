@@ -41,7 +41,7 @@ extension AppDelegate: CLLocationManagerDelegate {
                 return
         }
         let location = Location(lat: latitude, lng: longitude)
-        LocationsStorage.shared.saveLocationOnDisk(location)
+        LocationsStorage.shared.saveLocation(location)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

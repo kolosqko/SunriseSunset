@@ -12,10 +12,12 @@ import CoreLocation
 class LocationsStorage {
     static let shared = LocationsStorage()
     
-    private(set) var locations: [Location]
+    private(set) var locations: [LocationInfo]
     private let fileManager: FileManager
     private let documentsURL: URL
     private let geoCoder = CLGeocoder()
+    
+    var delegate: LocationStorageDelegateProtocol?
     
     init() {
         let fileManager = FileManager.default
@@ -24,46 +26,72 @@ class LocationsStorage {
 
         let jsonDecoder = JSONDecoder()
         
-        let locationsURL = documentsURL.appendingPathComponent("LocationsStorage")
+        let locationsURL = documentsURL.appendingPathComponent("Storage")
 
         guard let data = try? Data(contentsOf: locationsURL) else {
             self.locations = []
             return
         }
         
-        guard let locations = try? jsonDecoder.decode([Location].self, from: data) else {
+        guard let locations = try? jsonDecoder.decode([LocationInfo].self, from: data) else {
             self.locations = []
             return
         }
         self.locations = locations
     }
     
-    func saveLocationOnDisk(_ location: Location) {
+    private func saveLocationOnDisk(_ location: LocationInfo) {
         let encoder = JSONEncoder()
-        let fileURL = documentsURL.appendingPathComponent("LocationsStorage")
+        let fileURL = documentsURL.appendingPathComponent("Storage")
+        
         
         var locations = self.locations
+        if isLocationInfoSaved(location) {
+            return
+        }
+        
         locations.append(location)
-        getLocationDescription(location)
         let data = try! encoder.encode(locations)
         try! data.write(to: fileURL)
 
         self.locations = locations
-
+        delegate?.locationsDidUpdate()
     }
     
-    private func getLocationDescription(_ location: Location) {
+    func saveLocation(_ location: Location){
         let cllocation = CLLocation(latitude: location.lat, longitude: location.lng)
         geoCoder.reverseGeocodeLocation(cllocation) { placemarks, _ in
-            if let place = placemarks?.first {
-                let description = "\(place)"
-                print(place.locality)
-                print(place.country)
-                print(place.timeZone?.identifier)
-
+            guard let place = placemarks?.first else {
+                return
             }
-            
+            guard let cityName = place.locality,
+                let country = place.country,
+                let timeZoneId = place.timeZone?.identifier else {
+                return
+            }
+            let locationInfo = LocationInfo(name: cityName + " " + country,
+                                            latitude: Float(location.lat),
+                                            longitude: Float(location.lng),
+                                            timeZoneId: timeZoneId)
+            self.saveLocationOnDisk(locationInfo)
         }
     }
     
+    private func isLocationInfoSaved(_ locationInfo: LocationInfo) -> Bool{
+        var isSaved = false
+        self.locations.forEach{ location in
+            if location.locationName == locationInfo.locationName {
+                isSaved = true
+            }
+        }
+        return isSaved
+    }
+    
+    
 }
+
+
+protocol LocationStorageDelegateProtocol {
+    func locationsDidUpdate()
+}
+
