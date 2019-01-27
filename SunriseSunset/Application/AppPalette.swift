@@ -11,7 +11,7 @@ import UIKit
 
 final class Palette {
     
-    private static let paletteArray = ["#f18f01", "#048ba8", "#2e4057", "#99c24d", "#2f2d2e", "#8e98a7"]
+    private static let paletteArray = ["#a7a5c6", "#8797b2", "#6d8a96", "#5d707f", "#66ced6", "#8e98a7"]
     
     static let palette: Palette = {
         return Palette(palettArray: paletteArray)
@@ -24,11 +24,12 @@ final class Palette {
     let textMain: UIColor
     
     init(palettArray: [String]) {
-        tint = UIColor(hexString: palettArray[1])
+        contrast = UIColor(hexString: palettArray[5])
+        tint = UIColor.white
         background = UIColor(hexString: palettArray[3])
-        contrast = UIColor(hexString: palettArray[0])
-        blanc = UIColor.white
         textMain = UIColor(hexString: palettArray[4])
+        blanc = UIColor(hexString: palettArray[2])
+        
     }
     
 }

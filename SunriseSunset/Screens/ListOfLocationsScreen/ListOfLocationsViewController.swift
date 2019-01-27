@@ -62,7 +62,7 @@ extension ListOfLocationsViewController: UITableViewDataSource {
             indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: addLocationCellIdentifier, for: indexPath)
             let backgroundView = UIView()
-            backgroundView.backgroundColor = Palette.palette.tint
+            backgroundView.backgroundColor = Palette.palette.contrast
             cell.selectedBackgroundView = backgroundView
             return cell
         }
@@ -78,7 +78,7 @@ extension ListOfLocationsViewController: UITableViewDataSource {
             }
         }
         let backgroundView = UIView()
-        backgroundView.backgroundColor = Palette.palette.tint
+        backgroundView.backgroundColor = Palette.palette.contrast
         cell.selectedBackgroundView = backgroundView
         return cell
     }
@@ -102,6 +102,7 @@ extension ListOfLocationsViewController: UITableViewDataSource {
         guard let tableHeader = view as? UITableViewHeaderFooterView else {
             return
         }
+        tableHeader.backgroundView?.backgroundColor = Palette.palette.blanc
         tableHeader.textLabel?.textColor = Palette.palette.textMain
     }
 }
