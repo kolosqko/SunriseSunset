@@ -60,6 +60,8 @@ class InfoViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func setupColors() {
+        view.backgroundColor = Palette.palette.background
+        
         titleView.backgroundColor = Palette.palette.background
         infoView.backgroundColor = Palette.palette.background
         locationNameLabel.textColor = Palette.palette.textMain

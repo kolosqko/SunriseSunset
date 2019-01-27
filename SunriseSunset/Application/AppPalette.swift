@@ -11,7 +11,7 @@ import UIKit
 
 final class Palette {
     
-    static let paletteArray = ["#f18f01", "#048ba8", "#2e4057", "#99c24d", "#2f2d2e", "#8e98a7"]
+    private static let paletteArray = ["#f18f01", "#048ba8", "#2e4057", "#99c24d", "#2f2d2e", "#8e98a7"]
     
     static let palette: Palette = {
         return Palette(palettArray: paletteArray)

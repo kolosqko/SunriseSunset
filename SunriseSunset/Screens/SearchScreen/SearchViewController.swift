@@ -81,6 +81,9 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "default")
         cell.textLabel?.text = result[indexPath.row].description
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = Palette.palette.tint
+        cell.selectedBackgroundView = backgroundView
         return cell
     }
 }

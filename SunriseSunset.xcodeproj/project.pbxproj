@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C101226121FE1CD200804FC7 /* AppPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C101226021FE1CD200804FC7 /* AppPalette.swift */; };
+		C101226321FE30ED00804FC7 /* AddLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C101226221FE30ED00804FC7 /* AddLocationView.swift */; };
 		C18E94EE21FB25BC0082A01A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E94ED21FB25BC0082A01A /* AppDelegate.swift */; };
 		C18E94F521FB25BF0082A01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18E94F421FB25BF0082A01A /* Assets.xcassets */; };
 		C18E94F821FB25BF0082A01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18E94F621FB25BF0082A01A /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		C101226021FE1CD200804FC7 /* AppPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPalette.swift; sourceTree = "<group>"; };
+		C101226221FE30ED00804FC7 /* AddLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationView.swift; sourceTree = "<group>"; };
 		C18E94EA21FB25BC0082A01A /* SunriseSunset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunriseSunset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18E94ED21FB25BC0082A01A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C18E94F421FB25BF0082A01A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				C18E953A21FBB20C0082A01A /* ListOfLocationsTableViewCell.xib */,
 				C18E953D21FBC4640082A01A /* AddLocationTableViewCell.swift */,
 				C18E953E21FBC4640082A01A /* AddLocationTableViewCell.xib */,
+				C101226221FE30ED00804FC7 /* AddLocationView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				C18E952D21FB92780082A01A /* TimeZoneModel.swift in Sources */,
 				C18E954521FC860D0082A01A /* InfoViewController.swift in Sources */,
 				C18E955421FC9A890082A01A /* SearchCoordinator.swift in Sources */,
+				C101226321FE30ED00804FC7 /* AddLocationView.swift in Sources */,
 				C18E954221FC6D4A0082A01A /* LocationStorage.swift in Sources */,
 				C18E955021FC9A4A0082A01A /* SearchViewController.swift in Sources */,
 				C18E950821FB2F690082A01A /* AppCoordinator.swift in Sources */,
