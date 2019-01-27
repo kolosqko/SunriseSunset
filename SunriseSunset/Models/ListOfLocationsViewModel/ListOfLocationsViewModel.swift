@@ -19,10 +19,13 @@ class ListOfLocationsViewModel {
         }
     }
     
+    var currentLocation: LocationInfo?
+    
     var delegate: ListOfLocationsViewModelDelegate?
     
     init() {
         self.locations = LocationsStorage.shared.locations
+        self.currentLocation = LocationsStorage.shared.currentLocation
         LocationsStorage.shared.delegate = self
     }
 }
@@ -40,10 +43,17 @@ struct LocationInfo: Decodable, Encodable {
         self.longitude = longitude
         self.timeZoneId = timeZoneId
     }
+    init() {
+        self.locationName = "Failed to find current location"
+        self.latitude = 0
+        self.longitude = 0
+        self.timeZoneId = ""
+    }
 }
 
 extension ListOfLocationsViewModel: LocationStorageDelegateProtocol {
     func locationsDidUpdate() {
         self.locations = LocationsStorage.shared.locations
+        self.currentLocation = LocationsStorage.shared.currentLocation
     }
 }
