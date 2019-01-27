@@ -89,7 +89,22 @@ class LocationsStorage {
         }
     }
     
-    func removelocation() {
+    func removelocation(locationName: String) {
+        var locations = self.locations
+        for index in 0...locations.count {
+            if locations[index].locationName == locationName {
+                locations.remove(at: index)
+            }
+        }
+        
+        let encoder = JSONEncoder()
+        let fileURL = documentsURL.appendingPathComponent(LocationsStorage.storageFileName)
+        
+        let data = try! encoder.encode(locations)
+        try! data.write(to: fileURL)
+        
+        self.locations = locations
+        delegate?.locationsDidUpdate()
         
     }
     

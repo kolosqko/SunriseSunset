@@ -17,7 +17,6 @@ class ListOfLocationsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var longitudeLabel: UILabel!
     
-    
     func setupCell(locationInfo: LocationInfo) {
         locationNameLabel.text = locationInfo.locationName
         locationNameLabel.adjustsFontSizeToFitWidth = true
