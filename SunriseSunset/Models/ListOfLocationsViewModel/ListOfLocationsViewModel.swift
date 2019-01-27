@@ -44,7 +44,7 @@ struct LocationInfo: Decodable, Encodable {
         self.timeZoneId = timeZoneId
     }
     init() {
-        self.locationName = ""
+        self.locationName = "Failed to find current location"
         self.latitude = 0
         self.longitude = 0
         self.timeZoneId = ""

@@ -98,11 +98,21 @@ extension ListOfLocationsViewController: UITableViewDelegate {
         guard let viewModel = viewModel else {
             return
         }
-        if indexPath.row == viewModel.locations.count {
-            delegate?.addNewlocation()
+        switch indexPath.section {
+        case 0:
+            guard let currentLocation = viewModel.currentLocation else {
+                return
+            }
+            delegate?.didSelectLocation(currentLocation)
+        case 1:
+            if indexPath.row == viewModel.locations.count {
+                delegate?.addNewlocation()
+                return
+            }
+            delegate?.didSelectLocation(viewModel.locations[indexPath.row])
+        default:
             return
         }
-        delegate?.didSelectLocation(viewModel.locations[indexPath.row])
     }
 }
 
