@@ -27,11 +27,10 @@ final class AppCoordinator: Coordinator {
         self.rootViewController = UINavigationController()
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
-        UINavigationBar.appearance().barTintColor = Palette.palette.background
+        UINavigationBar.appearance().barTintColor = Palette.palette.contrast
         UINavigationBar.appearance().tintColor = Palette.palette.tint
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : Palette.palette.textMain]
         UITableView.appearance().backgroundColor = Palette.palette.background
-        UITableView.appearance().tintColor = Palette.palette.tint
         UITableViewCell.appearance().backgroundColor = Palette.palette.background
         rootViewController.navigationBar.prefersLargeTitles = true
         rootViewController.navigationBar.largeTitleTextAttributes = [.foregroundColor : Palette.palette.textMain]

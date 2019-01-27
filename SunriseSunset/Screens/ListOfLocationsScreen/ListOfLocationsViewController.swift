@@ -97,6 +97,13 @@ extension ListOfLocationsViewController: UITableViewDataSource {
             return ""
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let tableHeader = view as? UITableViewHeaderFooterView else {
+            return
+        }
+        tableHeader.textLabel?.textColor = Palette.palette.textMain
+    }
 }
 
 extension ListOfLocationsViewController: UITableViewDelegate {

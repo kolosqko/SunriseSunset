@@ -40,6 +40,7 @@ class SearchViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Palette.palette.background
         resultsTableView.dataSource = self
         resultsTableView.delegate = self
         searchController.searchResultsUpdater = self

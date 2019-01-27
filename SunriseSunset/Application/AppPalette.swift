@@ -25,10 +25,10 @@ final class Palette {
     
     init(palettArray: [String]) {
         tint = UIColor(hexString: palettArray[1])
-        background = UIColor(hexString: palettArray[0])
-        contrast = UIColor(hexString: palettArray[2])
+        background = UIColor(hexString: palettArray[3])
+        contrast = UIColor(hexString: palettArray[0])
         blanc = UIColor.white
-        textMain = contrast
+        textMain = UIColor(hexString: palettArray[4])
     }
     
 }
