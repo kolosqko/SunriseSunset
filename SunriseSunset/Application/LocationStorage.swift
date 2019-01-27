@@ -17,9 +17,12 @@ class LocationsStorage {
     static let shared = LocationsStorage()
     
     private(set) var locations: [LocationInfo]
+    private(set) var currentLocation: LocationInfo?
     private let fileManager: FileManager
     private let documentsURL: URL
     private let geoCoder = CLGeocoder()
+    
+    private static let storageFileName = "Storage"
     
     var delegate: LocationStorageDelegateProtocol?
     
@@ -30,7 +33,7 @@ class LocationsStorage {
 
         let jsonDecoder = JSONDecoder()
         
-        let locationsURL = documentsURL.appendingPathComponent("Storage")
+        let locationsURL = documentsURL.appendingPathComponent(LocationsStorage.storageFileName)
 
         guard let data = try? Data(contentsOf: locationsURL) else {
             self.locations = []
@@ -46,7 +49,7 @@ class LocationsStorage {
     
     private func saveLocationOnDisk(_ location: LocationInfo) {
         let encoder = JSONEncoder()
-        let fileURL = documentsURL.appendingPathComponent("Storage")
+        let fileURL = documentsURL.appendingPathComponent(LocationsStorage.storageFileName)
         
         
         var locations = self.locations
@@ -62,22 +65,24 @@ class LocationsStorage {
         delegate?.locationsDidUpdate()
     }
     
-    func saveLocation(_ location: Location){
+    func saveLocation(_ location: Location, isCurrentLocation: Bool = false){
         let cllocation = CLLocation(latitude: location.lat, longitude: location.lng)
         geoCoder.reverseGeocodeLocation(cllocation) { placemarks, _ in
             guard let place = placemarks?.first else {
                 return
             }
-            guard let cityName = place.locality,
-                let n = place.administrativeArea,
-                let country = place.country,
-                let timeZoneId = place.timeZone?.identifier else {
-                return
-            }
-            let locationInfo = LocationInfo(name: cityName + ", " + n + ", " + country,
+            let cityName = place.locality ?? "Nil"
+            let adminArea = place.administrativeArea ?? "Nil"
+            let country = place.country ?? "Nil"
+            let timeZoneId = place.timeZone?.identifier ?? "Europe/London"
+            let locationInfo = LocationInfo(name: cityName + ", " + adminArea + ", " + country,
                                             latitude: Float(location.lat),
                                             longitude: Float(location.lng),
                                             timeZoneId: timeZoneId)
+            if isCurrentLocation {
+                self.currentLocation = locationInfo
+                self.delegate?.locationsDidUpdate()
+            }
             self.saveLocationOnDisk(locationInfo)
         }
     }

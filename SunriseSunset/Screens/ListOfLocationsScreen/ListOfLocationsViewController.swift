@@ -46,19 +46,50 @@ extension ListOfLocationsViewController: UITableViewDataSource {
         guard let viewModel = viewModel else {
             return 0
         }
-        return viewModel.locations.count + 1
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return viewModel.locations.count + 1
+        default:
+            return 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == self.tableView(tableView, numberOfRowsInSection: 0) - 1 {
+        if indexPath.row == self.tableView(tableView, numberOfRowsInSection: 1) - 1,
+            indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: addLocationCellIdentifier, for: indexPath)
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: locationCellIdentifier, for: indexPath)
         if let cell = cell as? ListOfLocationsTableViewCell, let viewModel = viewModel {
-            cell.setupCell(locationInfo: viewModel.locations[indexPath.row])
+            switch indexPath.section {
+            case 0:
+                cell.setupCell(locationInfo: viewModel.currentLocation ?? LocationInfo())
+            case 1:
+                cell.setupCell(locationInfo: viewModel.locations[indexPath.row])
+            default:
+                return cell
+            }
         }
         return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Current location"
+        case 1:
+            return "Saved locations"
+        default:
+            return ""
+        }
     }
 }
 
