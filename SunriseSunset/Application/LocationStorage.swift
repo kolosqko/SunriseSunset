@@ -47,13 +47,15 @@ class LocationsStorage {
         self.locations = locations
     }
     
-    private func saveLocationOnDisk(_ location: LocationInfo) {
+    private func saveLocationOnDisk(_ location: LocationInfo, isCurrentLocation: Bool = false) {
         let encoder = JSONEncoder()
         let fileURL = documentsURL.appendingPathComponent(LocationsStorage.storageFileName)
         
         
         var locations = self.locations
-        if isLocationInfoSaved(location) {
+        
+        if isLocationInfoSaved(location), isCurrentLocation {
+            delegate?.locationsDidUpdate()
             return
         }
         
@@ -83,8 +85,12 @@ class LocationsStorage {
                 self.currentLocation = locationInfo
                 self.delegate?.locationsDidUpdate()
             }
-            self.saveLocationOnDisk(locationInfo)
+            self.saveLocationOnDisk(locationInfo, isCurrentLocation: isCurrentLocation)
         }
+    }
+    
+    func removelocation() {
+        
     }
     
     private func isLocationInfoSaved(_ locationInfo: LocationInfo) -> Bool{

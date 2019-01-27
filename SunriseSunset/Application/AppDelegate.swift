@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         setupLocationManager()
         self.appCoordinator = AppCoordinator(window: self.window!)
+        self.appCoordinator?.delegate = self
         self.appCoordinator?.start()
         return true
     }
@@ -47,6 +48,12 @@ extension AppDelegate: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
+    }
+}
+
+extension AppDelegate: AppCoordinatorDelegate {
+    func findCurrentLocation() {
+        locationManager.requestLocation()
     }
 }
 

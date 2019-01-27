@@ -9,12 +9,18 @@
 import Foundation
 import UIKit
 
+protocol AppCoordinatorDelegate {
+    func findCurrentLocation()
+}
+
 
 final class AppCoordinator: Coordinator {
     
     private let window: UIWindow
     private let rootViewController: UINavigationController
     private var listOfLocationsCoordinator: ListOfLocationsCoordinator?
+    
+    var delegate: AppCoordinatorDelegate?
     
     init(window: UIWindow) {
         self.window = window
@@ -24,15 +30,25 @@ final class AppCoordinator: Coordinator {
         UINavigationBar.appearance().barTintColor = UIColor.gray
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.white]
-        
+        rootViewController.navigationBar.prefersLargeTitles = true
+        rootViewController.navigationBar.largeTitleTextAttributes = [.foregroundColor : UIColor.white]
     }
     
     func start(){
-
-        self.listOfLocationsCoordinator = ListOfLocationsCoordinator(presenter: self.rootViewController)
-        self.listOfLocationsCoordinator?.start()
+        
+        let listOfLocationsCoordinator = ListOfLocationsCoordinator(presenter: self.rootViewController)
+        listOfLocationsCoordinator.delegate = self
+        listOfLocationsCoordinator.start()
+        self.listOfLocationsCoordinator = listOfLocationsCoordinator
 
     }
     
     
+}
+
+
+extension AppCoordinator: ListOfLocationsCoordinatorDelegate {
+    func currentLocationButtonTapped() {
+        delegate?.findCurrentLocation()
+    }
 }

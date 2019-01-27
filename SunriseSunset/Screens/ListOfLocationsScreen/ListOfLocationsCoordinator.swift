@@ -9,12 +9,18 @@
 import Foundation
 import UIKit
 
+protocol ListOfLocationsCoordinatorDelegate {
+    func currentLocationButtonTapped()
+}
+
 class ListOfLocationsCoordinator: Coordinator {
     
     private let presenter: UINavigationController
     private var listOfLocationsViewController: ListOfLocationsViewController?
     private var infoCoordinator: InfoCoordinator?
     private var searchCoordinator: SearchCoordinator?
+    
+    var delegate: ListOfLocationsCoordinatorDelegate?
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -25,7 +31,13 @@ class ListOfLocationsCoordinator: Coordinator {
         listOfLocationsViewController.delegate = self
         listOfLocationsViewController.navigationItem.title = "Saved locations"
         presenter.pushViewController(listOfLocationsViewController, animated: true)
+        let currentLocationButton = UIBarButtonItem(title: "Find current location", style: .plain, target: self, action: #selector(currentLocationButtonTapped))
+        listOfLocationsViewController.navigationItem.rightBarButtonItems = [currentLocationButton]
         self.listOfLocationsViewController = listOfLocationsViewController
+    }
+    
+    @objc private func currentLocationButtonTapped() {
+        delegate?.currentLocationButtonTapped()
     }
 }
 
