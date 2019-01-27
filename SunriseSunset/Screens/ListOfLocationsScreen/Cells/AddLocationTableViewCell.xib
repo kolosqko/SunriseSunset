@@ -15,26 +15,27 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="69" id="KGk-i7-Jjw" customClass="AddLocationTableViewCell" customModule="SunriseSunset" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="68.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4Q-Td-6fI">
-                        <rect key="frame" x="16" y="11" width="288" height="47"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n79-RX-ka7" customClass="AddLocationView" customModule="SunriseSunset" customModuleProvider="target">
+                        <rect key="frame" x="135" y="11" width="50" height="50"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="n79-RX-ka7" secondAttribute="height" multiplier="1:1" id="U9G-V1-G28"/>
+                            <constraint firstAttribute="height" constant="50" id="qQP-pH-JW1"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="P4Q-Td-6fI" secondAttribute="trailing" id="QJ4-ik-pnw"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="P4Q-Td-6fI" secondAttribute="bottom" id="Xmy-6H-qbe"/>
-                    <constraint firstItem="P4Q-Td-6fI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="eFA-Lz-B4E"/>
-                    <constraint firstItem="P4Q-Td-6fI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="fHq-Ea-rq8"/>
+                    <constraint firstItem="n79-RX-ka7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="HKx-zG-OeF"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="n79-RX-ka7" secondAttribute="bottom" id="Ot1-FH-ZRa"/>
+                    <constraint firstItem="n79-RX-ka7" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="xDp-eC-oUc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="137.59999999999999" y="165.96701649175412"/>
+            <point key="canvasLocation" x="137.59999999999999" y="165.06746626686657"/>
         </tableViewCell>
     </objects>
 </document>

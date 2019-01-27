@@ -31,7 +31,7 @@ class ListOfLocationsCoordinator: Coordinator {
         listOfLocationsViewController.delegate = self
         listOfLocationsViewController.navigationItem.title = "Saved locations"
         presenter.pushViewController(listOfLocationsViewController, animated: true)
-        let currentLocationButton = UIBarButtonItem(title: "Find current location", style: .plain, target: self, action: #selector(currentLocationButtonTapped))
+        let currentLocationButton = UIBarButtonItem(title: "Locate", style: .plain, target: self, action: #selector(currentLocationButtonTapped))
         listOfLocationsViewController.navigationItem.rightBarButtonItems = [currentLocationButton]
         self.listOfLocationsViewController = listOfLocationsViewController
     }

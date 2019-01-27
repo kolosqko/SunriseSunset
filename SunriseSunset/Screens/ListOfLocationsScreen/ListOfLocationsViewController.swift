@@ -61,6 +61,9 @@ extension ListOfLocationsViewController: UITableViewDataSource {
         if indexPath.row == self.tableView(tableView, numberOfRowsInSection: 1) - 1,
             indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: addLocationCellIdentifier, for: indexPath)
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = Palette.palette.contrast
+            cell.selectedBackgroundView = backgroundView
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: locationCellIdentifier, for: indexPath)
@@ -74,6 +77,9 @@ extension ListOfLocationsViewController: UITableViewDataSource {
                 return cell
             }
         }
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = Palette.palette.contrast
+        cell.selectedBackgroundView = backgroundView
         return cell
     }
     
@@ -91,10 +97,20 @@ extension ListOfLocationsViewController: UITableViewDataSource {
             return ""
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let tableHeader = view as? UITableViewHeaderFooterView else {
+            return
+        }
+        tableHeader.backgroundView?.backgroundColor = Palette.palette.blanc
+        tableHeader.textLabel?.textColor = Palette.palette.textMain
+    }
 }
 
 extension ListOfLocationsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.isSelected = false
         guard let viewModel = viewModel else {
             return
         }

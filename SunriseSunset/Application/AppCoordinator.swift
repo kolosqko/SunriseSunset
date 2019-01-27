@@ -27,11 +27,13 @@ final class AppCoordinator: Coordinator {
         self.rootViewController = UINavigationController()
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
-        UINavigationBar.appearance().barTintColor = UIColor.gray
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().barTintColor = Palette.palette.contrast
+        UINavigationBar.appearance().tintColor = Palette.palette.tint
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : Palette.palette.textMain]
+        UITableView.appearance().backgroundColor = Palette.palette.background
+        UITableViewCell.appearance().backgroundColor = Palette.palette.background
         rootViewController.navigationBar.prefersLargeTitles = true
-        rootViewController.navigationBar.largeTitleTextAttributes = [.foregroundColor : UIColor.white]
+        rootViewController.navigationBar.largeTitleTextAttributes = [.foregroundColor : Palette.palette.textMain]
     }
     
     func start(){

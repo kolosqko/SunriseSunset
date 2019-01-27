@@ -22,6 +22,9 @@ class ListOfLocationsTableViewCell: UITableViewCell {
         locationNameLabel.adjustsFontSizeToFitWidth = true
         latitudeLabel.text = "latitude: \(locationInfo.latitude)"
         longitudeLabel.text = "longitude: \(locationInfo.longitude)"
+        locationNameLabel.textColor = Palette.palette.textMain
+        latitudeLabel.textColor = Palette.palette.textMain
+        longitudeLabel.textColor = Palette.palette.textMain
     }
     
 }

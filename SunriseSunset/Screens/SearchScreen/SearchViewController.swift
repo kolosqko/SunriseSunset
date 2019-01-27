@@ -40,6 +40,7 @@ class SearchViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Palette.palette.background
         resultsTableView.dataSource = self
         resultsTableView.delegate = self
         searchController.searchResultsUpdater = self
@@ -60,6 +61,8 @@ class SearchViewController: UIViewController, StoryboardInstantiable {
 
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        searchController.searchBar.textField?.textColor = Palette.palette.textMain
+        searchController.searchBar.tintColor = Palette.palette.tint
         guard let text = searchController.searchBar.text else {
             return
         }
@@ -81,6 +84,10 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "default")
         cell.textLabel?.text = result[indexPath.row].description
+        cell.textLabel?.textColor = Palette.palette.textMain
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = Palette.palette.contrast
+        cell.selectedBackgroundView = backgroundView
         return cell
     }
 }
